@@ -14,7 +14,8 @@ class CreateAuctionStylesTable extends Migration
     {
         Schema::create('auction_styles', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('name_en');
+            $table->string('name_nl');
             $table->softDeletes();
             $table->timestamps();
         });

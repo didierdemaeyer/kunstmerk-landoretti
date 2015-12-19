@@ -22,9 +22,12 @@ class CreateAuctionsTable extends Migration
             $table->float('width');
             $table->float('height');
             $table->float('depth');
-            $table->text('description');
-            $table->text('condition');
-            $table->string('origin');
+            $table->text('description_en');
+            $table->text('description_nl');
+            $table->text('condition_en');
+            $table->text('condition_nl');
+            $table->string('origin_en');
+            $table->string('origin_nl');
             $table->string('image_artwork');
             $table->string('image_signature');
             $table->string('image_optional');
