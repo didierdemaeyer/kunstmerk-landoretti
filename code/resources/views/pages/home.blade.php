@@ -4,6 +4,8 @@
 
 @section('content')
 
+	@include('includes.header-image')
+	@include('includes.breadcrumbs')
 
 
 @stop

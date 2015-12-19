@@ -107,14 +107,19 @@
 	}
 
 	.language-select {
-		display: block;
+		display: inline-block;
 		float: right;
-		height: 50px;
+		margin: 1.4rem 0 0;
+
+		list-style: none;
+		padding-left: 0;
+
+		li {
+			float: left;
+			margin-left: 20px;
+		}
 
 		a {
-			margin-left: 20px;
-			vertical-align: middle;
-			
 			font-size: 1.3rem;
 			color: $accentBlue;
 			text-decoration: none;

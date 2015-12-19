@@ -5,7 +5,8 @@ body {
 .container {
 	position: relative;
 	display: block;
-	width: 1024px;
+	width: 1024px !important;
 	height: auto;
+	padding: 0 !important;
 	margin: 0 auto;
 }

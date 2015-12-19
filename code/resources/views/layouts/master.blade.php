@@ -53,8 +53,8 @@
 				</ul>
 
 				<ul class="language-select">
-					<a href="/nl" class="{{ Config::get('app.locale') == 'nl' ? 'active' : '' }}">nl</a>
-					<a href="/en" class="{{ Config::get('app.locale') == 'en' ? 'active' : '' }}">en</a>
+					<li><a href="/nl" class="{{ Config::get('app.locale') == 'nl' ? 'active' : '' }}">nl</a></li>
+					<li><a href="/en" class="{{ Config::get('app.locale') == 'en' ? 'active' : '' }}">en</a></li>
 				</ul>
 
 			</div>
@@ -62,8 +62,10 @@
 
 	</header>
 
-	<div class="content container">
+	<div id="content">
+
 		@yield('content')
+		
 	</div>
 
 	<footer>

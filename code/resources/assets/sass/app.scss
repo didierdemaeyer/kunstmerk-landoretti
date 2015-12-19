@@ -1,4 +1,4 @@
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
 // 1 - TOOLS
 @import "1-tools/normalize";
@@ -15,5 +15,7 @@
 @import "3-modules/header";
 @import "3-modules/footer";
 @import "3-modules/navigation";
+@import "3-modules/header-image";
+@import "3-modules/breadcrumbs";
 
 // 4 - PAGES
