@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFaqCategoryTable extends Migration
+class CreateFaqCategorieTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,12 @@ class CreateFaqCategoryTable extends Migration
      */
     public function up()
     {
-        Schema::create('faq_category', function (Blueprint $table) {
-            $table->integer('category_id')->unsigned();
+        Schema::create('faq_categorie', function (Blueprint $table) {
+            $table->integer('categorie_id')->unsigned();
             $table->integer('faq_id')->unsigned();
             $table->timestamps();
 
-            $table->primary(['category_id', 'faq_id']);
+            $table->primary(['categorie_id', 'faq_id']);
         });
     }
 
@@ -28,6 +28,6 @@ class CreateFaqCategoryTable extends Migration
      */
     public function down()
     {
-        Schema::drop('faq_category');
+        Schema::drop('faq_categorie');
     }
 }

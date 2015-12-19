@@ -1,2 +1,19 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+// 1 - TOOLS
+@import "1-tools/normalize";
+@import "1-tools/fonts";
+@import "1-tools/vars";
+
+// 2 - BASICS
+@import "2-basics/base";
+@import "2-basics/typography.scss";
+@import "2-basics/links";
+@import "2-basics/selection-colors";
+
+// 3 - MODULES
+@import "3-modules/header";
+@import "3-modules/footer";
+@import "3-modules/navigation";
+
+// 4 - PAGES
