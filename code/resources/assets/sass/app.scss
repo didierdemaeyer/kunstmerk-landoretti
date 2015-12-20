@@ -4,6 +4,7 @@
 @import "1-tools/normalize";
 @import "1-tools/fonts";
 @import "1-tools/vars";
+@import "1-tools/slick-theme";
 
 // 2 - BASICS
 @import "2-basics/base";
@@ -12,10 +13,13 @@
 @import "2-basics/selection-colors";
 
 // 3 - MODULES
+@import "3-modules/forms";
 @import "3-modules/header";
 @import "3-modules/footer";
 @import "3-modules/navigation";
-@import "3-modules/header-image";
 @import "3-modules/breadcrumbs";
+@import "3-modules/searchfield";
+@import "3-modules/auction-preview";
 
 // 4 - PAGES
+@import "4-pages/profile";

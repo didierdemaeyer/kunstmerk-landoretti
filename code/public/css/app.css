@@ -5937,6 +5937,136 @@ body {
   font-size: 1.6rem;
   /* sets the default sizing to make sure nothing is actually 10px */ }
 
+/* Slider */
+.slick-loading .slick-list {
+  background: #fff url("./ajax-loader.gif") center center no-repeat; }
+
+/* Icons */
+@font-face {
+  font-family: "slick";
+  src: url("./fonts/slick.eot");
+  src: url("./fonts/slick.eot?#iefix") format("embedded-opentype"), url("./fonts/slick.woff") format("woff"), url("./fonts/slick.ttf") format("truetype"), url("./fonts/slick.svg#slick") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* Arrows */
+.slick-prev,
+.slick-next {
+  position: absolute;
+  display: block;
+  height: 20px;
+  width: 20px;
+  line-height: 0px;
+  font-size: 0px;
+  cursor: pointer;
+  background: transparent;
+  color: transparent;
+  top: 50%;
+  margin-top: -10px\9;
+  /*lte IE 8*/
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  padding: 0;
+  border: none;
+  outline: none; }
+  .slick-prev:hover, .slick-prev:focus,
+  .slick-next:hover,
+  .slick-next:focus {
+    outline: none;
+    background: transparent;
+    color: transparent; }
+    .slick-prev:hover:before, .slick-prev:focus:before,
+    .slick-next:hover:before,
+    .slick-next:focus:before {
+      opacity: 1; }
+  .slick-prev.slick-disabled:before,
+  .slick-next.slick-disabled:before {
+    opacity: 0.25; }
+
+.slick-prev:before, .slick-next:before {
+  font-family: "slick";
+  font-size: 20px;
+  line-height: 1;
+  color: white;
+  opacity: 0.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.slick-prev {
+  left: -25px; }
+  [dir="rtl"] .slick-prev {
+    left: auto;
+    right: -25px; }
+  .slick-prev:before {
+    content: "←"; }
+    [dir="rtl"] .slick-prev:before {
+      content: "→"; }
+
+.slick-next {
+  right: -25px; }
+  [dir="rtl"] .slick-next {
+    left: -25px;
+    right: auto; }
+  .slick-next:before {
+    content: "→"; }
+    [dir="rtl"] .slick-next:before {
+      content: "←"; }
+
+/* Dots */
+.slick-slider {
+  margin-bottom: 30px; }
+
+.slick-dots {
+  position: absolute;
+  bottom: -45px;
+  list-style: none;
+  display: block;
+  text-align: center;
+  padding: 0;
+  width: 100%; }
+  .slick-dots li {
+    position: relative;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer; }
+    .slick-dots li button {
+      border: 0;
+      background: transparent;
+      display: block;
+      height: 20px;
+      width: 20px;
+      outline: none;
+      line-height: 0px;
+      font-size: 0px;
+      color: transparent;
+      padding: 5px;
+      cursor: pointer; }
+      .slick-dots li button:hover, .slick-dots li button:focus {
+        outline: none; }
+        .slick-dots li button:hover:before, .slick-dots li button:focus:before {
+          opacity: 1; }
+      .slick-dots li button:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "•";
+        width: 20px;
+        height: 20px;
+        font-family: "slick";
+        font-size: 6px;
+        line-height: 20px;
+        text-align: center;
+        color: black;
+        opacity: 0.25;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale; }
+    .slick-dots li.slick-active button:before {
+      color: black;
+      opacity: 0.75; }
+
 body {
   background-color: #ffffff; }
 
@@ -5959,12 +6089,14 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -2px; }
 
 .huge, h1 {
-  font-size: 68px;
+  font-size: 4.5rem;
+  font-weight: normal;
   line-height: 1.05;
   letter-spacing: -1px; }
 
 .large, h2 {
-  font-size: 42px;
+  font-size: 3rem;
+  font-weight: normal;
   line-height: 1.14; }
 
 .bigger, h3 {
@@ -5994,6 +6126,141 @@ hr {
   clear: both;
   margin: 10px 0 30px;
   height: 0; }
+
+form {
+  margin-top: 50px; }
+  form .form-info {
+    font-size: 1.5rem;
+    margin-bottom: 30px; }
+    form .form-info p {
+      margin-bottom: 0; }
+  form .form-group {
+    margin-bottom: 30px; }
+  form label {
+    font-weight: normal;
+    color: #0a1e75; }
+    form label .optional {
+      font-size: 1.4rem; }
+  form .form-control {
+    height: auto;
+    padding: 10px 15px;
+    background-color: #f4f4f4;
+    color: #595959;
+    border: 1px solid #dbdbdb;
+    border-radius: 0;
+    box-shadow: none; }
+    form .form-control:focus {
+      border-color: #a8a8a8;
+      outline: none;
+      box-shadow: none; }
+  form select.form-control {
+    padding: 0 15px; }
+    form select.form-control option {
+      padding: 10px 15px;
+      background-color: #f4f4f4; }
+      form select.form-control option:hover {
+        background-color: #e7e7e7; }
+  form textarea.form-control {
+    height: 120px; }
+  form .checkbox label {
+    color: #595959; }
+  form .checkbox a {
+    color: #01a6a0;
+    text-decoration: underline; }
+  form .fileupload .bootstrap-filestyle {
+    width: 100%; }
+  form .fileupload .btn-default {
+    display: block;
+    width: 100%;
+    height: 62px;
+    padding: 10px 20px;
+    background-color: #737373;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 0;
+    border: 1px solid #595959; }
+  form .btn-primary {
+    width: 270px;
+    padding: 15px 40px;
+    background-color: #01a6a0;
+    color: #ffffff;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    border-radius: 0;
+    border: none; }
+    form .btn-primary:hover {
+      background-color: #01a6a0; }
+  form .askquestion {
+    text-align: center;
+    margin-top: 30px; }
+    form .askquestion a {
+      color: #01a6a0;
+      text-transform: uppercase; }
+
+.new-auction-section {
+  background-position: center;
+  background-size: cover; }
+
+.auction-caption {
+  position: relative;
+  background-color: rgba(33, 57, 139, 0.7);
+  padding: 0px;
+  margin: 40px 0px 40px 0px; }
+  .auction-caption .icon-slider {
+    position: absolute;
+    top: -16px;
+    left: -16px; }
+  .auction-caption h3, .auction-caption p {
+    padding: 5px 20px 5px 20px; }
+  .auction-caption h3 {
+    color: white; }
+  .auction-caption p {
+    color: white;
+    text-align: left; }
+  .auction-caption .visit-auction {
+    background-color: white;
+    padding: 15px 20px 15px 20px; }
+    .auction-caption .visit-auction a {
+      color: #01a6a0; }
+
+.footer {
+  margin-top: 100px;
+  border-top: 1px solid #f4f4f4; }
+  .footer a {
+    color: #01a6a0;
+    text-align: left;
+    width: 100%;
+    display: block; }
+    .footer a:hover {
+      text-decoration: none; }
+  .footer .search-field {
+    border-radius: 5px;
+    font-style: italic;
+    border: 1px solid #757575;
+    padding: 5px 10px 5px 10px;
+    margin-top: 10px; }
+  .footer .copyright-text {
+    margin-top: 100px;
+    padding-bottom: 20px; }
+  .footer .email-link {
+    display: inline;
+    text-decoration: underline; }
+  .footer i {
+    padding-right: 5px; }
+  .footer p {
+    margin-bottom: 0px; }
+  .footer h4 {
+    margin-bottom: 0px; }
+  .footer div {
+    padding-top: 20px; }
+  .footer .left-border {
+    border-left: 1px solid #f4f4f4; }
+  .footer .social-logos {
+    padding-top: 20px;
+    padding-bottom: 20px; }
+    .footer .social-logos img {
+      padding-right: 5px; }
 
 .accent-line {
   display: block;
@@ -6027,24 +6294,6 @@ hr {
     font-size: 1.4rem;
     text-decoration: none;
     text-transform: uppercase; }
-
-#top-navbar .search {
-  display: block;
-  float: right; }
-  #top-navbar .search .search-input {
-    height: 24px;
-    margin: 10px 5px;
-    padding: 2px 10px;
-    font-size: 1.5rem;
-    border: 1px solid #a6a6a6;
-    border-radius: 5px; }
-  #top-navbar .search button {
-    margin: 0;
-    padding: 0;
-    background-color: transparent;
-    color: #0a1e75;
-    font-size: 1.8rem;
-    border: none; }
 
 #main-navbar {
   position: relative;
@@ -6089,36 +6338,131 @@ hr {
       #main-navbar .language-select a.active {
         font-weight: bold; }
 
-.new-auction-section {
-  background-position: center;
-  background-size: cover; }
-
-.auction-caption {
-  position: relative;
-  background-color: rgba(33, 57, 139, 0.7);
-  padding: 0px;
-  margin: 40px 0px 40px 0px; }
-  .auction-caption .icon-slider {
-    position: absolute;
-    top: -16px;
-    left: -16px; }
-  .auction-caption h3, .auction-caption p {
-    padding: 5px 20px 5px 20px; }
-  .auction-caption h3 {
-    color: white; }
-  .auction-caption p {
-    color: white;
-    text-align: left; }
-  .auction-caption .visit-auction {
-    background-color: white;
-    padding: 15px 20px 15px 20px; }
-    .auction-caption .visit-auction a {
-      color: #01a6a0; }
-
 .breadcrumbs p {
   padding: 20px 0px 10px 0px;
   color: #01a6a0; }
   .breadcrumbs p a {
     color: #01a6a0; }
+
+.search {
+  display: block;
+  float: right; }
+  .search form {
+    margin-top: 0; }
+  .search .search-input {
+    height: 30px;
+    margin: 10px 5px;
+    padding: 2px 10px;
+    font-size: 1.5rem;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px; }
+  .search button {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    color: #0a1e75;
+    font-size: 1.8rem;
+    border: none; }
+
+.auction-preview {
+  display: block;
+  float: left;
+  width: 25%;
+  height: auto;
+  padding: 0 3px; }
+  .auction-preview .auction-image {
+    display: block;
+    width: 250px;
+    height: 250px;
+    background-position: center;
+    background-size: cover; }
+    .auction-preview .auction-image span {
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      opacity: 0;
+      transition: all 0.3s ease; }
+      .auction-preview .auction-image span i {
+        font-size: 6rem;
+        line-height: 250px;
+        color: #ffffff; }
+    .auction-preview .auction-image:hover span {
+      opacity: 1;
+      background-color: rgba(0, 0, 0, 0.4); }
+  .auction-preview .auction-info {
+    width: 100%;
+    padding: 15px; }
+    .auction-preview .auction-info span {
+      display: block; }
+    .auction-preview .auction-info .artist {
+      color: #0a1e75;
+      font-size: 1.5rem; }
+    .auction-preview .auction-info .title {
+      font-size: 2rem; }
+    .auction-preview .auction-info .call-to-action {
+      border-bottom: 1px solid #dbdbdb; }
+      .auction-preview .auction-info .call-to-action .timeleft {
+        display: inline-block;
+        font-size: 1.3rem;
+        line-height: 51px; }
+      .auction-preview .auction-info .call-to-action .btn-visit-auction {
+        float: right;
+        padding: 15px 10px;
+        background-color: #f4f4f4;
+        font-size: 1.4rem;
+        color: #0a1e75;
+        text-transform: uppercase;
+        border-radius: 0;
+        border-top: 1px solid #dbdbdb;
+        border-right: 1px solid #dbdbdb;
+        border-left: 1px solid #dbdbdb;
+        border-bottom: none; }
+
+.panel-profile {
+  border-color: #dbdbdb;
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: 60px; }
+  .panel-profile .panel-body {
+    padding-left: 40px; }
+  .panel-profile h2 {
+    margin: 0 0 20px; }
+  .panel-profile p {
+    margin: 0; }
+  .panel-profile .email a {
+    color: #01a6a0;
+    text-decoration: underline; }
+
+.active-auctions-slider {
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 0; }
+  .active-auctions-slider .auction-preview {
+    z-index: 0; }
+  .active-auctions-slider .slider-prev,
+  .active-auctions-slider .slider-next {
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 250px;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.4);
+    cursor: pointer; }
+    .active-auctions-slider .slider-prev i,
+    .active-auctions-slider .slider-next i {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 3rem;
+      line-height: 250px; }
+  .active-auctions-slider .slider-prev {
+    margin-left: 3px; }
+    .active-auctions-slider .slider-prev i {
+      margin-left: 5px; }
+  .active-auctions-slider .slider-next {
+    top: 0;
+    right: 0;
+    margin-right: 18px; }
+    .active-auctions-slider .slider-next i {
+      margin-left: 14px; }
 
 /*# sourceMappingURL=app.css.map */

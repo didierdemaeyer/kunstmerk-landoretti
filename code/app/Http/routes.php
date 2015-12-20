@@ -12,3 +12,23 @@
 */
 
 Route::get('/', ['as' => 'home', 'uses' => 'PagesController@home']);
+
+// Registration Routes
+Route::get('register', ['as' => 'getRegister', 'uses' => 'AuthController@getRegister']);
+Route::post('register', ['as' => 'postRegister', 'uses' => 'AuthController@postRegister']);
+
+
+
+
+
+/**
+ * TEMP ROUTES
+ */
+
+Route::get('auctions/create', function () {
+	return view('auctions.create');
+});
+
+Route::get('profile', function () {
+	return view('user.profile');
+});

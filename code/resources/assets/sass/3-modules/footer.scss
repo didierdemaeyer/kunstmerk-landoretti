@@ -1,0 +1,62 @@
+.footer {
+	margin-top: 100px;
+	border-top: 1px solid $grey;
+
+	a {
+		color: $accent;
+		text-align: left;
+		width: 100%;
+		display: block;
+
+		&:hover{
+			text-decoration: none;
+		}
+	}
+
+	.search-field{
+		border-radius: 5px;
+		font-style: italic;
+		border : 1px solid $dgrijs;
+		padding: 5px 10px 5px 10px;
+		margin-top: 10px;
+	}
+
+	.copyright-text{
+		margin-top : 100px;
+		padding-bottom: 20px;
+	}
+
+	.email-link {
+		display: inline;
+		text-decoration : underline;
+	}
+
+	i {
+		padding-right: 5px;
+	}
+
+	p {
+		margin-bottom: 0px;
+	}
+
+	h4 {
+		margin-bottom: 0px;
+	}
+
+	div {
+		padding-top: 20px;
+	}
+
+	.left-border {
+		border-left: 1px solid $grey;
+	}
+	
+	.social-logos {
+		padding-top: 20px;
+		padding-bottom: 20px;
+
+		img{
+					padding-right: 5px;
+		}
+	}
+}

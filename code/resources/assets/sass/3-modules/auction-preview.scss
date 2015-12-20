@@ -1,0 +1,82 @@
+.auction-preview {
+	display: block;
+	float: left;
+	width: 25%;
+	height: auto;
+	padding: 0 3px;
+
+	.auction-image {
+		display: block;
+		width: 250px;
+		height: 250px;
+
+		background-position: center;
+		background-size: cover;
+
+		span {
+			display: block;
+			width: 100%;
+			height: 100%;
+
+			text-align: center;
+			opacity: 0;
+
+			transition: all 0.3s ease;
+
+			i {
+				font-size: 6rem;
+				line-height: 250px;
+				color: $white;
+			}
+		}
+
+		&:hover span {
+			opacity: 1;
+			background-color: rgba($black, 0.4);
+		}
+	}
+
+	.auction-info {
+		width: 100%;
+		padding: 15px;
+
+		span {
+			display: block;
+		}
+
+		.artist {
+			color: $accentBlue;
+			font-size: 1.5rem;
+		}
+
+		.title {
+			font-size: 2rem;
+		}
+		
+		.call-to-action {
+			border-bottom: 1px solid $borderColor;
+
+			.timeleft {
+				display: inline-block;
+				font-size: 1.3rem;
+				line-height: 51px;
+			}
+
+			.btn-visit-auction {
+				float: right;
+				padding: 15px 10px;
+				background-color: $grey;
+				
+				font-size: 1.4rem;
+				color: $accentBlue;
+				text-transform: uppercase;
+
+				border-radius: 0;
+				border-top: 1px solid $borderColor;
+				border-right: 1px solid $borderColor;
+				border-left: 1px solid $borderColor;
+				border-bottom: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,69 @@
+.panel-profile {
+	border-color: $borderColor;
+	border-radius: 0;
+	box-shadow: none;
+	margin-bottom: 60px;
+
+	.panel-body {
+		padding-left: 40px;
+	}
+
+	h2 {
+		margin: 0 0 20px;
+	}
+
+	p {
+		margin: 0;
+	}
+
+	.email a {
+		color: $accent;
+		text-decoration: underline;
+	}
+}
+
+.active-auctions-slider {
+	position: relative;
+	margin-top: 30px;
+	margin-bottom: 0;
+
+	.auction-preview {
+		z-index: 0;
+	}
+
+	.slider-prev,
+	.slider-next {
+		position: absolute;
+		display: block;
+		width: 40px;
+		height: 250px;
+		z-index: 1;
+		
+		background-color: rgba($black, 0.4);
+		cursor: pointer;
+
+		i {
+			color: rgba($white, 0.5);
+			font-size: 3rem;
+			line-height: 250px;
+		}
+	}
+
+	.slider-prev {
+		margin-left: 3px;
+
+		i {
+			margin-left: 5px;
+		}
+	}
+
+	.slider-next {
+		top: 0;
+		right: 0;
+		margin-right: 18px;
+
+		i {
+			margin-left: 14px;
+		}
+	}
+}
