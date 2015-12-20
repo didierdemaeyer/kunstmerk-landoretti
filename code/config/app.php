@@ -151,7 +151,7 @@ return [
          * My Custom Service Providers
          */
         Barryvdh\Debugbar\ServiceProvider::class,
-        'Collective\Html\HtmlServiceProvider',
+        Collective\Html\HtmlServiceProvider::class,
     ],
 
     /*
@@ -204,8 +204,8 @@ return [
          * My Custom Facades
          */
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
-        'Form' => 'Collective\Html\FormFacade',
-        'Html' => 'Collective\Html\HtmlFacade',
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
     ],
 
 ];
