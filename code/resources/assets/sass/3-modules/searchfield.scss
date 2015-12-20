@@ -1,0 +1,28 @@
+.search {
+	display: block;
+	float: right;
+
+	form {
+		margin-top: 0;
+	}
+
+	.search-input {
+		height: 30px;
+		margin: 10px 5px;
+		padding: 2px 10px;
+
+		font-size: 1.5rem;
+		border: 1px solid $borderColor;
+		border-radius: 5px;
+	}
+
+	button {
+		margin: 0;
+		padding: 0;
+		background-color: transparent;
+
+		color: $accentBlue;
+		font-size: 1.8rem;
+		border: none;
+	}
+}
