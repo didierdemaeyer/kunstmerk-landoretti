@@ -1,10 +1,9 @@
-
 <div class="footer container">
 	<div class="row">
 		<div class="col-md-3">
 			<h4>HELP</h4>
 			<a href="#">Login</a>
-			<a href="#">Register</a>
+			<a href="{{ route('getRegister') }}">Register</a>
 			<br>
 			<h4>HELP</h4>
 			<a href="#">Terms of Service</a>
@@ -14,8 +13,8 @@
 			<a href="#">About Us</a>
 			<br>
 			<h4>LANGUAGES</h4>
-			<a href="#">Nederlands</a>
-			<a href="#">English</a>
+			<a href="/nl">Nederlands</a>
+			<a href="/en">English</a>
 		</div>
 		<div class="col-md-3">
 			<h4>STYLE</h4>
@@ -69,15 +68,13 @@
 					<button type="submit"><i class="fa fa-search"></i></button>
 				</form>
 			</div>
-			<br>
-			<br>
 			<h4>CONTACT</h4>
 			<p>Landoretti ART</p>
 			<p>Straatnaam xxx</p>
 			<p>xxxx, Oostende</p>
 			<br>
 			<p><i class="fa fa-phone"></i> +xx (0)x xxx xx xx</p>
-			<p><i class="fa fa-envelope-o"></i> <a class="email-link" href="#">info&amp;landorettiart.com</a>
+			<p><i class="fa fa-envelope-o"></i> <a class="email-link" href="mailto:info@landoretti.com">info&amp;landorettiart.com</a>
 			<p class="social-logos">
 				<img src="{{ asset('img/icon-facebook.png') }}" alt="facebook icon">
 				<img src="{{ asset('img/icon-twitter.png') }}" alt="facebook icon">
@@ -93,7 +90,7 @@
 	<nav id="main-navbar">
 		<div class="container">
 
-			<img src="{{ asset('img/logo.jpg') }}" alt="Landoretti Art Logo" class="logo">
+			<img src="{{ asset('img/logo-footer.png') }}" alt="Landoretti Art Logo" class="logo">
 
 			<ul class="nav-links">
 				<li><a href="{{ route('home') }}">Home</a></li>

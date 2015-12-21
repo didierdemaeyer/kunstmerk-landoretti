@@ -4,7 +4,7 @@
 
 @section('content')
 
-	@include('includes.header-image')
+	@include('includes.header')
 	@include('includes.breadcrumbs')
 
 

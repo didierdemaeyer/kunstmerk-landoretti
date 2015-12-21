@@ -6225,24 +6225,26 @@ form {
       color: #01a6a0; }
 
 .footer {
+  height: 560px;
   margin-top: 100px;
-  border-top: 1px solid #f4f4f4; }
+  border-top: 1px solid #dbdbdb; }
+  .footer .row {
+    height: 100%;
+    padding: 0; }
+  .footer .col-md-3 {
+    height: 100%; }
   .footer a {
-    color: #01a6a0;
-    text-align: left;
+    display: block;
     width: 100%;
-    display: block; }
+    color: #01a6a0;
+    font-size: 1.5rem;
+    text-align: left; }
     .footer a:hover {
       text-decoration: none; }
-  .footer .search-field {
-    border-radius: 5px;
-    font-style: italic;
-    border: 1px solid #757575;
-    padding: 5px 10px 5px 10px;
-    margin-top: 10px; }
   .footer .copyright-text {
-    margin-top: 100px;
-    padding-bottom: 20px; }
+    margin-top: 160px;
+    padding-bottom: 20px;
+    font-size: 1.3rem; }
   .footer .email-link {
     display: inline;
     text-decoration: underline; }
@@ -6251,16 +6253,25 @@ form {
   .footer p {
     margin-bottom: 0px; }
   .footer h4 {
-    margin-bottom: 0px; }
+    margin-bottom: 0px;
+    font-size: 1.6rem; }
   .footer div {
     padding-top: 20px; }
   .footer .left-border {
-    border-left: 1px solid #f4f4f4; }
+    border-left: 1px solid #dbdbdb; }
+  .footer .search {
+    float: none;
+    margin-bottom: 30px; }
+    .footer .search .search-input {
+      margin: 0 5px 0 0; }
   .footer .social-logos {
     padding-top: 20px;
     padding-bottom: 20px; }
     .footer .social-logos img {
       padding-right: 5px; }
+
+#footer #main-navbar .logo {
+  top: -111px; }
 
 .accent-line {
   display: block;
@@ -6447,11 +6458,11 @@ form {
     width: 40px;
     height: 250px;
     z-index: 1;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
     cursor: pointer; }
     .active-auctions-slider .slider-prev i,
     .active-auctions-slider .slider-next i {
-      color: rgba(255, 255, 255, 0.5);
+      color: rgba(255, 255, 255, 0.7);
       font-size: 3rem;
       line-height: 250px; }
   .active-auctions-slider .slider-prev {
