@@ -251,8 +251,8 @@
 	<script>
 		(function ($) {
 
-			$('#btn-advanced-sort').click(function () {
-				event.preventDefault();
+			$('#btn-advanced-sort').click(function (e) {
+				e.preventDefault();
 
 				$(this).find('.fa').toggleClass('fa-angle-right');
 				$(this).find('.fa').toggleClass('fa-angle-down');
