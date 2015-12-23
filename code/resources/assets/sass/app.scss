@@ -14,6 +14,7 @@
 
 // 3 - MODULES
 @import "3-modules/forms";
+@import "3-modules/tables";
 @import "3-modules/header";
 @import "3-modules/footer";
 @import "3-modules/navigation";
@@ -23,3 +24,8 @@
 
 // 4 - PAGES
 @import "4-pages/profile";
+@import "4-pages/art";
+@import "4-pages/home";
+@import "4-pages/details";
+@import "4-pages/my-auctions";
+@import "4-pages/watchlist";

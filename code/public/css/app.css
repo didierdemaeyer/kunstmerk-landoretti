@@ -5932,7 +5932,7 @@ html {
   /* sets the base font to 10px for easier math */ }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-size: 1.6rem;
   /* sets the default sizing to make sure nothing is actually 10px */ }
@@ -6198,6 +6198,36 @@ form {
       color: #01a6a0;
       text-transform: uppercase; }
 
+.my-auctions, .my-watchlist {
+  color: #4e4e4e; }
+  .my-auctions .table, .my-watchlist .table {
+    margin-top: 15px; }
+    .my-auctions .table h3, .my-watchlist .table h3 {
+      margin: 0px; }
+    .my-auctions .table th, .my-watchlist .table th {
+      background-color: #f4f4f4;
+      border: 0px;
+      font-weight: normal; }
+    .my-auctions .table .img-preview, .my-watchlist .table .img-preview {
+      width: 136px;
+      height: 136px;
+      border-bottom: 0px;
+      border-top: 0px; }
+  .my-auctions .add-button, .my-watchlist .add-button {
+    padding: 20px 15px 20px 15px;
+    border: 1px solid #e5e5e5;
+    background-color: #f4f4f4;
+    display: block;
+    color: #0a1e75;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center; }
+    .my-auctions .add-button:hover, .my-watchlist .add-button:hover {
+      text-decoration: underline;
+      border-bottom: 1px solid #e5e5e5; }
+    .my-auctions .add-button i, .my-watchlist .add-button i {
+      padding-left: 10px; }
+
 .new-auction-section {
   background-position: center;
   background-size: cover; }
@@ -6315,7 +6345,8 @@ form {
     top: -73px;
     left: 0;
     height: calc(200px / 1.20);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); }
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 1; }
   #main-navbar .nav-links {
     display: block;
     float: left;
@@ -6463,17 +6494,384 @@ form {
     .active-auctions-slider .slider-prev i,
     .active-auctions-slider .slider-next i {
       color: rgba(255, 255, 255, 0.7);
-      font-size: 3rem;
+      font-size: 4rem;
       line-height: 250px; }
   .active-auctions-slider .slider-prev {
-    margin-left: 3px; }
+    border-left: 3px solid #ffffff; }
     .active-auctions-slider .slider-prev i {
-      margin-left: 5px; }
+      margin-left: 10px; }
   .active-auctions-slider .slider-next {
     top: 0;
     right: 0;
-    margin-right: 18px; }
+    margin-right: 15px;
+    border-right: 3px solid #ffffff; }
     .active-auctions-slider .slider-next i {
       margin-left: 14px; }
+
+.sorting-container {
+  width: 100%;
+  border-bottom: 1px solid #595959; }
+  .sorting-container .basic-sort {
+    display: inline-block;
+    line-height: 80px; }
+    .sorting-container .basic-sort .sort-by {
+      text-transform: uppercase;
+      font-weight: bold; }
+    .sorting-container .basic-sort a {
+      color: #595959;
+      font-weight: normal;
+      text-transform: lowercase;
+      text-decoration: none;
+      padding: 5px; }
+      .sorting-container .basic-sort a:active, .sorting-container .basic-sort a:hover {
+        color: #000000;
+        border-bottom: 3px solid #dbdbdb; }
+  .sorting-container .advanced-sort {
+    float: right;
+    display: inline-block; }
+    .sorting-container .advanced-sort a {
+      color: #0a1e75;
+      line-height: 80px;
+      text-decoration: none; }
+    .sorting-container .advanced-sort .arrow {
+      display: -webkit-inline-flex;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #a8a8a8; }
+      .sorting-container .advanced-sort .arrow i {
+        width: 100%;
+        color: #ffffff;
+        line-height: 20px;
+        text-align: center; }
+  .sorting-container .advanced-sort-container {
+    max-height: 0px;
+    overflow: hidden;
+    font-size: 1.4rem;
+    transition: all 0.5s ease; }
+    .sorting-container .advanced-sort-container.active {
+      max-height: 600px;
+      margin: 40px 0; }
+    .sorting-container .advanced-sort-container p {
+      margin-bottom: 5px;
+      font-weight: bold; }
+    .sorting-container .advanced-sort-container ul {
+      padding-left: 10px;
+      margin-bottom: 30px; }
+    .sorting-container .advanced-sort-container li {
+      list-style: none; }
+
+.art-page .big-preview,
+.art-page .small-previews {
+  width: 50%; }
+
+.art-page .big-preview {
+  float: left;
+  height: 840px;
+  margin-bottom: 60px;
+  padding: 0 3px; }
+  .art-page .big-preview .big-image {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center; }
+  .art-page .big-preview .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3); }
+  .art-page .big-preview .overlay-content {
+    position: absolute;
+    width: 100%;
+    bottom: 0; }
+  .art-page .big-preview h2 {
+    margin: 20px 50px;
+    vertical-align: bottom;
+    color: #000000; }
+  .art-page .big-preview p {
+    margin: 20px 50px 50px;
+    vertical-align: bottom;
+    color: #000000; }
+
+.art-page .small-previews {
+  float: right;
+  height: 900px; }
+  .art-page .small-previews .auction-preview {
+    width: 50%;
+    margin-bottom: 60px; }
+  .art-page .small-previews .auction-info {
+    padding-bottom: 0; }
+
+/*
+* Header Slider
+*/
+.carousel,
+.item,
+.item.active {
+  height: 700px; }
+
+.carousel-inner {
+  height: 100%; }
+
+.fill {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  /* background images in carousel are set in html */ }
+
+#myCarousel {
+  width: 100%;
+  left: 0; }
+
+.carousel-caption {
+  right: 0;
+  bottom: 250px;
+  left: 0;
+  background-color: rgba(33, 57, 139, 0.7);
+  padding: 0px; }
+  .carousel-caption p {
+    padding: 20px 40px 20px 40px;
+    color: white;
+    text-align: left; }
+
+.icon-slider {
+  position: absolute;
+  left: -16px;
+  top: -16px; }
+
+/*
+* Info Block - How does it work?
+*/
+.info-home h1, .info-home h3, .info-home p {
+  text-align: center; }
+
+.info-home img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block; }
+
+.info-home h1 {
+  color: #0a1e75;
+  padding: 40px 0px;
+  margin: 0px; }
+
+.info-home p {
+  padding: 0px 50px; }
+
+/*
+* Most popular this week
+*/
+.section-popular {
+  background-color: #f4f4f4;
+  margin-top: 40px; }
+
+.popular-home {
+  margin-top: 15px;
+  padding-bottom: 99px; }
+  .popular-home h1 {
+    text-align: center;
+    color: #0a1e75;
+    padding: 30px 0px;
+    margin: 0px; }
+  .popular-home .popular-image {
+    height: 150px;
+    width: 100%;
+    margin: 0px auto;
+    display: block;
+    margin-bottom: 5px;
+    background-size: cover;
+    background-position: center; }
+  .popular-home .popular-image-big {
+    height: 305px;
+    background-size: cover;
+    background-position: center; }
+  .popular-home .popular-left {
+    padding-right: 0px; }
+  .popular-home .popular-right {
+    padding-left: 5px; }
+
+.details h3 {
+  color: black; }
+
+.details .top-details i {
+  padding-left: 10px;
+  color: #0a1e75; }
+
+.details .top-details a {
+  color: #0a1e75; }
+
+.details .big-image {
+  width: 100%;
+  height: 350px;
+  background-position: center;
+  background-size: cover; }
+
+.details .small-images {
+  margin-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px; }
+  .details .small-images .small-image {
+    width: 32%;
+    float: left;
+    height: 110px;
+    background-position: center;
+    background-size: cover; }
+    .details .small-images .small-image:nth-child(2) {
+      margin-left: 2%;
+      margin-right: 2%; }
+
+.details .short-details {
+  text-align: right;
+  padding-left: 80px; }
+  .details .short-details h3 {
+    margin-top: 0px;
+    margin-bottom: 0px; }
+  .details .short-details .time-left {
+    margin-bottom: 0px;
+    color: #01a6a0;
+    font-size: 0.9em; }
+  .details .short-details .text {
+    margin-bottom: 0px; }
+  .details .short-details .age {
+    color: #0a1e75;
+    margin-bottom: 0px; }
+  .details .short-details .date {
+    color: #595959;
+    margin-bottom: 0px;
+    font-size: 0.9em; }
+  .details .short-details .more {
+    color: #000000;
+    text-decoration: underline;
+    margin-bottom: 30px;
+    display: block;
+    font-weight: bold; }
+    .details .short-details .more:hover {
+      text-decoration: none; }
+  .details .short-details .bid-now {
+    border: 1px solid #dbdbdb;
+    padding-right: 15px; }
+    .details .short-details .bid-now h5, .details .short-details .bid-now h3 {
+      color: #0a1e75; }
+    .details .short-details .bid-now .buy-now {
+      color: #01a6a0;
+      text-decoration: underline; }
+      .details .short-details .bid-now .buy-now:hover {
+        text-decoration: none; }
+    .details .short-details .bid-now .bid-now-sub {
+      margin-right: -15px;
+      background-color: #01a6a0;
+      color: white;
+      padding: 10px 15px 10px 0px; }
+      .details .short-details .bid-now .bid-now-sub i {
+        padding-left: 5px; }
+      .details .short-details .bid-now .bid-now-sub p {
+        margin-bottom: 0px;
+        font-weight: bold; }
+      .details .short-details .bid-now .bid-now-sub input {
+        width: 100px;
+        color: #000000;
+        margin-right: 20px; }
+    .details .short-details .bid-now .add-watchlist {
+      padding: 10px 0px 0px 0px;
+      text-align: center;
+      margin-right: -15px; }
+      .details .short-details .bid-now .add-watchlist a {
+        color: #0a1e75;
+        text-decoration: underline; }
+        .details .short-details .bid-now .add-watchlist a:hover {
+          text-decoration: none; }
+      .details .short-details .bid-now .add-watchlist i {
+        padding-right: 10px; }
+
+.details .description-auction {
+  border: 1px solid #dbdbdb;
+  margin: 45px 0px 45px 0px;
+  padding: 35px 5px 35px 5px;
+  display: inline-block; }
+  .details .description-auction h6 {
+    font-weight: bold;
+    margin-bottom: 0px;
+    color: black; }
+  .details .description-auction .description-left {
+    padding: 0px 45px 0px 15px; }
+  .details .description-auction .description-right {
+    padding-left: 25px;
+    border-left: 1px solid #dbdbdb; }
+    .details .description-auction .description-right p {
+      margin-bottom: 0px; }
+    .details .description-auction .description-right div {
+      margin-top: 60px;
+      background-color: #595959;
+      color: white;
+      padding: 5px 10px 5px 10px;
+      text-align: center;
+      font-weight: bold; }
+
+.section-related {
+  background-color: #f4f4f4;
+  padding-bottom: 50px; }
+
+.my-auctions .table td:nth-child(n+2) {
+  padding: 0px 25px 0px 25px;
+  vertical-align: middle; }
+
+.my-auctions .table td:nth-child(n+3) {
+  text-align: center; }
+
+.my-auctions .table th:nth-child(2) {
+  padding-left: 25px; }
+
+.my-auctions .table th:nth-child(n+3) {
+  text-align: center; }
+
+.my-watchlist .filter {
+  margin-left: 31px; }
+  .my-watchlist .filter a.active {
+    height: auto;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 3px solid #f4f4f4; }
+  .my-watchlist .filter a {
+    padding-bottom: 5px;
+    color: #4e4e4e; }
+    .my-watchlist .filter a:hover {
+      font-weight: bold;
+      text-decoration: none;
+      border-bottom: 3px solid #f4f4f4; }
+
+.my-watchlist .table {
+  border-left: 0px;
+  border-top: 0px;
+  border-bottom: 0px; }
+  .my-watchlist .table .tbody {
+    border-left: 0px; }
+  .my-watchlist .table td:nth-child(1) {
+    background-color: transparent;
+    border: 0px;
+    vertical-align: middle; }
+    .my-watchlist .table td:nth-child(1) input[type=checkbox] {
+      background: transparent;
+      border-radius: 0px; }
+  .my-watchlist .table td:nth-child(n+3) {
+    padding: 0px 25px 0px 25px;
+    vertical-align: middle; }
+  .my-watchlist .table td:nth-child(n+4) {
+    text-align: center; }
+  .my-watchlist .table th {
+    border-top: 1px solid #dbdbdb; }
+    .my-watchlist .table th:nth-child(1) {
+      background-color: transparent;
+      border: 0px; }
+    .my-watchlist .table th:nth-child(2) {
+      border-left: 1px solid #dbdbdb; }
+    .my-watchlist .table th:nth-child(3) {
+      padding-left: 25px; }
+    .my-watchlist .table th:nth-child(n+4) {
+      text-align: center; }
 
 /*# sourceMappingURL=app.css.map */

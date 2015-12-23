@@ -32,3 +32,21 @@ Route::get('auctions/create', function () {
 Route::get('profile', function () {
 	return view('user.profile');
 });
+
+
+
+Route::get('home', function () {
+	return view('home');
+});
+Route::get('details', function () {
+	return view('details');
+});
+Route::get('my-auctions', function () {
+	return view('my-auctions');
+});
+Route::get('watchlist', function () {
+	return view('watchlist');
+});
+Route::get('art', ['as' => 'auctions.overview', function() {
+	return view('auctions.overview');
+}]);
