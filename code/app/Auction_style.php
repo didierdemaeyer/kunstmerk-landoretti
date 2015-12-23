@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Auction_style extends Model
 {
 	
-	protected $fillable = ['name'];
+	protected $fillable = ['name_en', 'name_nl'];
 
 	/**
 	 * Relationships
@@ -15,6 +15,6 @@ class Auction_style extends Model
 
 	public function auctions()
 	{
-		return $this->hasMany('Auction');
+		return $this->hasMany('App\Auction');
 	}
 }

@@ -14,21 +14,21 @@ class Auction extends Model
 
 	public function bids()
 	{
-		return $this->hasMany('Bid');
+		return $this->hasMany('App\Bid');
 	}
 
 	public function owner()
 	{
-		return $this->belongsTo('User', 'owner_id');
+		return $this->belongsTo('App\User', 'owner_id');
 	}
 
 	public function buyer()
 	{
-		return $this->belongsTo('User', 'buyer_id');
+		return $this->belongsTo('App\User', 'buyer_id');
 	}
 
 	public function auction_style()
 	{
-		return $this->belongsTo('Auction_style');
+		return $this->belongsTo('App\Auction_style');
 	}
 }

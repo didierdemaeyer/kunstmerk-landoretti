@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Faq extends Model
 {
 	
-	protected $fillable = ['question', 'answer'];
+	protected $fillable = ['question_en', 'question_nl', 'answer_en', 'answer_nl'];
 
 	/**
 	 * Relationships
@@ -15,6 +15,6 @@ class Faq extends Model
 
 	public function categories()
 	{
-		return $this->belongsToMany('Categorie', 'faq_categorie');
+		return $this->belongsToMany('App\Categorie', 'faq_categorie');
 	}
 }

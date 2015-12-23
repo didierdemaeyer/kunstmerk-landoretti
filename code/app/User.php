@@ -44,26 +44,26 @@ class User extends Model implements AuthenticatableContract,
 
 	public function role()
 	{
-		return $this->belongsTo('Role');
+		return $this->belongsTo('App\Role');
 	}
 
 	public function auctions()
 	{
-		return $this->hasMany('Auction', 'owner_id');
+		return $this->hasMany('App\Auction', 'owner_id');
 	}
 
 	public function bought()
 	{
-		return $this->hasMany('Auction', 'buyer_id');
+		return $this->hasMany('App\Auction', 'buyer_id');
 	}
 
 	public function watchlist()
 	{
-		return $this->belongsToMany('Auction', 'watchlist');
+		return $this->belongsToMany('App\Auction', 'watchlist');
 	}
 
 	public function bids()
 	{
-		return $this->hasMany('Bid');
+		return $this->hasMany('App\Bid');
 	}
 }

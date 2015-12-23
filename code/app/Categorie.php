@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Categorie extends Model
 {
 
-	protected $fillable = ['name'];
+	protected $fillable = ['name_en', 'name_nl'];
 
 	/**
 	 * Relationships
@@ -15,6 +15,6 @@ class Categorie extends Model
 
 	public function faq()
 	{
-		return $this->belongsToMany('Categorie', 'faq_categorie');
+		return $this->belongsToMany('App\Faq', 'faq_categorie');
 	}
 }

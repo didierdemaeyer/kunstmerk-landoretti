@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Role extends Model
 {
 	
-	protected $fillable = ['name'];
+	protected $fillable = ['name_en', 'name_nl'];
 
 	/**
 	 * Relationships
@@ -15,6 +15,6 @@ class Role extends Model
 
 	public function users()
 	{
-		return $this->hasMany('User');
+		return $this->hasMany('App\User');
 	}
 }
