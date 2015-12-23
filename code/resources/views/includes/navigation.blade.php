@@ -23,7 +23,7 @@
 	
 		<ul class="nav-links">
 			<li><a href="{{ route('home') }}">Home</a></li>
-			<li><a href="">Art</a></li>
+			<li><a href="{{ route('auctions.overview') }}">Art</a></li>
 			<li><a href="">ISearch</a></li>
 			<li><a href="">MyAuctions</a></li>
 			<li><a href="">MyBids</a></li>

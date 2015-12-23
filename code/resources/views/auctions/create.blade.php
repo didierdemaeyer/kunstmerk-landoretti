@@ -193,7 +193,7 @@
 
 			<div class="row">
 				<div class="col-md-3 askquestion">
-					<a href="#">Ask a question</a>
+					<a href="#">Ask a question <i class="fa fa-angle-right"></i></a>
 				</div>
 			</div>
 		</form>

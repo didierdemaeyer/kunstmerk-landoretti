@@ -41,7 +41,7 @@
 						<div class="call-to-action clearfix">
 							<span class="timeleft">25d 14u 44m</span>
 
-							<a href="#" class="btn btn-visit-auction">Visit Auction ></a>
+							<a href="#" class="btn btn-visit-auction">Visit Auction <i class="fa fa-angle-right"></i></a>
 						</div>
 					</div>
 				</div>
@@ -57,7 +57,7 @@
 						<div class="call-to-action clearfix">
 							<span class="timeleft">25d 14u 44m</span>
 
-							<a href="#" class="btn btn-visit-auction">Visit Auction ></a>
+							<a href="#" class="btn btn-visit-auction">Visit Auction <i class="fa fa-angle-right"></i></a>
 						</div>
 					</div>
 				</div>
@@ -73,7 +73,7 @@
 						<div class="call-to-action clearfix">
 							<span class="timeleft">25d 14u 44m</span>
 
-							<a href="#" class="btn btn-visit-auction">Visit Auction ></a>
+							<a href="#" class="btn btn-visit-auction">Visit Auction <i class="fa fa-angle-right"></i></a>
 						</div>
 					</div>
 				</div>
@@ -89,7 +89,7 @@
 						<div class="call-to-action clearfix">
 							<span class="timeleft">25d 14u 44m</span>
 
-							<a href="#" class="btn btn-visit-auction">Visit Auction ></a>
+							<a href="#" class="btn btn-visit-auction">Visit Auction <i class="fa fa-angle-right"></i></a>
 						</div>
 					</div>
 				</div>
@@ -125,8 +125,8 @@
 				infinite: true,
 				slidesToShow: 4,
 				adaptiveHeight: true,
-				prevArrow: '<div class="slider-prev"><i class="fa fa-chevron-left"></i></div>',
-				nextArrow: '<div class="slider-next"><i class="fa fa-chevron-right"></i></div>'
+				prevArrow: '<div class="slider-prev"><i class="fa fa-angle-left"></i></div>',
+				nextArrow: '<div class="slider-next"><i class="fa fa-angle-right"></i></div>'
 			});
 		})()
 	</script>

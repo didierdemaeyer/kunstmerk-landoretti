@@ -6,6 +6,7 @@
   <title>@yield('title') - Landoretti</title>
   <meta name="description" content="Auction website for art brand Landoretti">
   <meta name="author" content="Didier De Maeyer">
+  <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}">
 
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>

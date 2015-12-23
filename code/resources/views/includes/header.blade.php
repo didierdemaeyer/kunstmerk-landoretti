@@ -10,7 +10,7 @@
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, ab sed, tenetur pariatur odio iste quaerat! Aliquid iste sequi.</p>
 			<p>Price: &euro; 299,99</p>
 			<div class="visit-auction">
-				<a href="#">VISIT AUCTION > </a>
+				<a href="#">VISIT AUCTION <i class="fa fa-angle-right"></i> </a>
 			</div>
 		</div>
 		<div class="col-md-2">
