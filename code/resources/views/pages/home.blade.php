@@ -78,12 +78,10 @@
 	<div class="container">
 		<div class="popular-home row">
 			<h1>Most popular this week</h1>
-			<div class="col-md-4 popular-left">
-				<div class="popular-image" style="background-image:url('http://lorempixel.com/400/200/');"></div>
-				<div class="popular-image" style="background-image:url('http://lorempixel.com/400/200/');"></div>
-			</div>
-			<div class="col-md-8 popular-right">
-				<div class="popular-image-big" style="background-image:url('http://lorempixel.com/400/200/');"></div>
+			<div class="col-md-12">
+				<a href="#" class="popular-image" style="background-image:url('http://lorempixel.com/400/400/');"><span class="overlay"><i class="fa fa-search"></i></span></a>
+				<a href="#" class="popular-image" style="background-image:url('http://lorempixel.com/400/400/');"><span class="overlay"><i class="fa fa-search"></i></span></a>
+				<a href="#" class="popular-image" style="background-image:url('http://lorempixel.com/400/400/');"><span class="overlay"><i class="fa fa-search"></i></span></a>
 			</div>
 		</div>
 	</div>
