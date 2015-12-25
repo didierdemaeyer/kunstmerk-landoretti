@@ -11,12 +11,25 @@
 |
 */
 
+
+Route::group(['before' => 'guest'], function() {
+	// Registration routes
+	Route::get('register', ['as' => 'getRegister', 'uses' => 'AuthController@getRegister']);
+	Route::post('register', ['as' => 'postRegister', 'uses' => 'AuthController@postRegister']);
+	// Login Route
+	Route::post('login', ['as' => 'postLogin', 'uses' => 'AuthController@postLogin']);
+
+	// Password reset link request routes...
+	Route::get('password/email', 'Auth\PasswordController@getEmail');
+	Route::post('password/email', 'Auth\PasswordController@postEmail');
+
+	// Password reset routes...
+	Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
+	Route::post('password/reset', 'Auth\PasswordController@postReset');
+});
+
+
 Route::get('/', ['as' => 'home', 'uses' => 'PagesController@home']);
-
-// Registration Routes
-Route::get('register', ['as' => 'getRegister', 'uses' => 'AuthController@getRegister']);
-Route::post('register', ['as' => 'postRegister', 'uses' => 'AuthController@postRegister']);
-
 
 
 

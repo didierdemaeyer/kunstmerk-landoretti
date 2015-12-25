@@ -6384,7 +6384,8 @@ form {
   padding: 20px 0px 10px 0px;
   color: #01a6a0; }
   .breadcrumbs p a {
-    color: #01a6a0; }
+    color: #01a6a0;
+    text-transform: capitalize; }
 
 .search {
   display: block;
