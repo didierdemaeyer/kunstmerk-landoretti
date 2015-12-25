@@ -1,5 +1,6 @@
 <?php
 
+use App\Country;
 use App\Role;
 use App\User;
 use Illuminate\Database\Seeder;
@@ -19,12 +20,16 @@ class UsersTableSeeder extends Seeder {
 		$adminrole = Role::where('name_en', 'admin')->first();
 		$userrole = Role::where('name_en', 'user')->first();
 
+		// get country Belgium
+		$belgium = Country::where('name_en', 'Belgium')->first();
+
+		// create dummy users
 		User::create([
 			'role_id'    => $adminrole->id,
+			'country_id' => $belgium->id,
 			'name'       => 'admin',
 			'email'      => 'admin@test.be',
 			'password'   => bcrypt('root'),
-			'country'    => 'Belgium',
 			'postalcode' => '2627',
 			'city'       => 'Schelle',
 			'address'    => 'Frans Cretenlaan 55',
@@ -33,10 +38,10 @@ class UsersTableSeeder extends Seeder {
 
 		User::create([
 			'role_id'    => $userrole->id,
+			'country_id' => $belgium->id,
 			'name'       => 'user',
 			'email'      => 'user@test.be',
 			'password'   => bcrypt('root'),
-			'country'    => 'Belgium',
 			'postalcode' => '2627',
 			'city'       => 'Schelle',
 			'address'    => 'Frans Cretenlaan 55',

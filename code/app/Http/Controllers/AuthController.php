@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Country;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterUserRequest;
 use App\Role;
@@ -32,7 +33,9 @@ class AuthController extends Controller {
 
 	public function getRegister()
 	{
-		return view('auth.register');
+		$countries = Country::orderBy('name_en')->get();
+
+		return view('auth.register', compact(['countries']));
 	}
 
 	public function postRegister(RegisterUserRequest $request)
@@ -44,7 +47,14 @@ class AuthController extends Controller {
 
 		// set default role for user to user
 		$role = Role::where('name_en', 'user')->first();
-		$role->users()->save($user);
+		$user->role()->associate($role);
+
+		// set country
+		$country = Country::findOrFail($request->get('country'));
+		$user->country()->associate($user);
+
+		// save associations to user
+		$user->save();
 
 		Auth::login($user);
 

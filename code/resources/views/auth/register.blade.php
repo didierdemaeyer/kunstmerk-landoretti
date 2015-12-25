@@ -59,7 +59,7 @@
 				<div class="col-md-6">
 					<div class="form-group">
 						<label for="country">Country</label>
-						{!! Form::select('country', array('Belgium', 'The Netherlands', 'France', 'LOL'), 'Belgium', ['class' => 'form-control', 'id' => 'country']) !!}
+						{!! Form::select('country', $countries->lists('name_' . App::getLocale(), 'id'), null, ['class' => 'form-control', 'id' => 'country']) !!}
 					</div>
 				</div>
 				<div class="col-md-3">
