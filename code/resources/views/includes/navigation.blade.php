@@ -1,10 +1,26 @@
 <nav id="top-navbar">
 	<div class="container">
-		
-		<ul class="auth-links">
-			<li><a href="{{ route('getRegister') }}">Register</a></li>
-			<li><a href="">Login</a></li>
-		</ul>
+
+		@if ( Auth::check() )
+			<ul class="auth-links">
+				<li><a href="{{ route('watchlist') }}"><i class="fa fa-bars"></i> Watchlist</a></li>
+				<li><a href="{{ route('profile') }}"><i class="fa fa-user"></i> Profile</a></li>
+				<li><a href="{{ route('getLogout') }}">Logout</a></li>
+			</ul>
+		@else
+			<ul class="auth-links">
+				<li><a href="{{ route('getRegister') }}">Register</a></li>
+				<li><a href="#" id="loginbtn">Login</a></li>
+			</ul>
+		@endif
+
+		<div class="loginform">
+			{!! Form::open(['route' => 'postLogin']) !!}
+				{!! Form::text('email', null, ['class' => 'form-control', 'placeholder' => 'Email']) !!}
+				{!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password']) !!}
+				<button type="submit"><i class="fa fa-angle-right"></i></button>
+			{!! Form::close() !!}
+		</div>
 
 		<div class="search">
 			<form action="">
@@ -18,14 +34,14 @@
 
 <nav id="main-navbar">
 	<div class="container">
-		
+
 		<img src="{{ asset('img/logo.jpg') }}" alt="Landoretti Art Logo" class="logo">
-	
+
 		<ul class="nav-links">
 			<li><a href="{{ route('home') }}">Home</a></li>
 			<li><a href="{{ route('auctions.overview') }}">Art</a></li>
 			<li><a href="">ISearch</a></li>
-			<li><a href="">MyAuctions</a></li>
+			<li><a href="{{ route('myauctions') }}">MyAuctions</a></li>
 			<li><a href="">MyBids</a></li>
 			<li><a href="">Contact</a></li>
 		</ul>

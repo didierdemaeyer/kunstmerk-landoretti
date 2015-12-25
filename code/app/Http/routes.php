@@ -16,8 +16,9 @@ Route::group(['before' => 'guest'], function() {
 	// Registration routes
 	Route::get('register', ['as' => 'getRegister', 'uses' => 'AuthController@getRegister']);
 	Route::post('register', ['as' => 'postRegister', 'uses' => 'AuthController@postRegister']);
-	// Login Route
+	// Authentication Routes
 	Route::post('login', ['as' => 'postLogin', 'uses' => 'AuthController@postLogin']);
+	Route::get('logout', ['as' => 'getLogout', 'uses' => 'AuthController@getLogout']);
 
 	// Password reset link request routes...
 	Route::get('password/email', 'Auth\PasswordController@getEmail');
@@ -42,24 +43,21 @@ Route::get('auctions/create', function () {
 	return view('auctions.create');
 });
 
-Route::get('profile', function () {
+Route::get('profile', ['as' => 'profile', function () {
 	return view('user.profile');
-});
+}]);
 
 
 
-Route::get('home', function () {
-	return view('home');
-});
 Route::get('details', function () {
 	return view('details');
 });
-Route::get('my-auctions', function () {
-	return view('my-auctions');
-});
-Route::get('watchlist', function () {
+Route::get('myauctions', ['as' => 'myauctions', function () {
+	return view('myauctions');
+}]);
+Route::get('watchlist', ['as' => 'watchlist', function () {
 	return view('watchlist');
-});
+}]);
 Route::get('art', ['as' => 'auctions.overview', function() {
 	return view('auctions.overview');
 }]);

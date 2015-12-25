@@ -16,6 +16,6 @@ elixir(function(mix) {
     	.scripts([
     		'bootstrap.min.js',
     		'bootstrap-filestyle.min.js',
-    		'main.js'
+    		'app.js'
     	]);
 });

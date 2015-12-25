@@ -43,6 +43,49 @@
 			text-transform: uppercase;
 		}
 	}
+
+	.loginform {
+		display: block;
+		width: 0;
+		height: 0;
+		float: left;
+		visibility: hidden;
+		margin-left: 30px;
+		opacity: 0;
+
+		transition: opacity 0.3s ease, margin-left 0.3s ease;
+
+		&.visible {
+			width: auto;
+			height:auto;
+			visibility: visible;
+			opacity: 1;
+			margin-left: 0;
+		}
+
+		form {
+			margin-top: 11px;
+		}
+
+		.form-control {
+			float: left;
+			width: 150px;
+			padding: 3px 10px;
+			margin-right: 20px;
+		}
+
+		button {
+			width: 28px;
+			height: 28px;
+			background-color: $borderColor;
+			border: none;
+			line-height: 1.8rem;
+
+			i {
+				font-size: 1.8rem;
+			}
+		}
+	}
 }
 
 #main-navbar {

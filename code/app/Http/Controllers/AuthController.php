@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterUserRequest;
 use App\Role;
 use App\User;
@@ -13,9 +14,20 @@ use App\Http\Controllers\Controller;
 
 class AuthController extends Controller {
 
-	public function postLogin()
+	public function postLogin(LoginRequest $request)
 	{
+		if (Auth::attempt(['email' => $request->get('email'), 'password' => $request->get('password')], true)) {
+			// do something?
+		}
 
+		return redirect()->route('home');
+	}
+
+	public function getLogout()
+	{
+		Auth::logout();
+
+		return redirect()->route('home');
 	}
 
 	public function getRegister()
