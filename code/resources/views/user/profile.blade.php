@@ -14,14 +14,15 @@
 
 		<div class="panel panel-default panel-profile">
 			<div class="panel-body">
-				<h2>Jasper Poppe</h2>
-				<p class="email"><i class="fa fa-envelope-o"></i> <a href="mailto:jasper@email.be">jasper&#64;email.be</a></p>
-				<p class="phone"><i class="fa fa-phone"></i> +xx (0)x xxx xx xx</p>
+				<h2>{{ $user->name }}</h2>
+				<p class="email"><i class="fa fa-envelope-o"></i> <a href="mailto:{{ $user->email }}">{{ $user->email }}</a></p>
+				<p class="phone"><i class="fa fa-phone"></i> {{ $user->phone }}</p>
 				
 				<br>
 				
-				<p class="address">Straatnaam xxx</p>
-				<p class="city">xxxx, Oostende</p>
+				<p class="address">{{ $user->address }}</p>
+				<p class="city">{{ $user->postalcode }}, {{ $user->city }}</p>
+				<p class="country">{{ (App::getLocale() == 'en') ? $user->country->name_en : $user->country->name_nl }}</p>
 			</div>
 		</div>
 

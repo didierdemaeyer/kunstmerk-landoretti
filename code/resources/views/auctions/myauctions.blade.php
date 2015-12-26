@@ -5,6 +5,8 @@
 @include('includes/header')
 @include('includes/breadcrumbs')
 
+
+
 <div class="container">
 	<div class="my-auctions">
 		<div class="row">
@@ -14,9 +16,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-3 col-md-offset-9">
-				<a href="#" class="add-button">
-					ADD NEW AUCTION<i class="fa fa-angle-right"></i>
-				</a>
+				<a href="{{ route('auctions.create') }}" class="add-button">ADD NEW AUCTION <i class="fa fa-angle-right"></i></a>
 			</div>
 		</div>
 		<div class="row">
@@ -106,7 +106,38 @@
 				<h3>Active</h3>
 			</div>
 			<div class="col-md-12">
-				<p>You currently have no active auctions. Please add a new auction or wait for approval.</p>
+				@if(count($activeAuctions))
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th></th>
+								<th>Auction details</th>
+								<th>Estimated price</th>
+								<th>End date</th>
+								<th>Remaining time</th>
+							</tr>
+						</thead>
+						<tbody>
+							@foreach($activeAuctions as $auction)
+								<tr>
+									<td class="img-preview" style="background-image:url('http://lorempixel.com/400/200/');"></td>
+									<td>
+										<h3>{{ $auction->title }}</h3>
+										<p class="age">{{ strftime('%Y', strtotime($auction->year)) }}, Salvador Dali</p>
+									</td>
+									<td><h3>&euro; {{ $auction->min_price }}</h3></td>
+									<td>
+										<p class="date">{{ strftime('%B %d, %Y', strtotime($auction->enddate)) }}</p>
+										<p class="date">{{ strftime('%H:%M', strtotime($auction->enddate)) }}</p>
+									</td>
+									<td><p>Tijd over</p></td>
+								</tr>
+							@endforeach
+						</tbody>
+					</table>
+				@else
+					<p>You currently have no active auctions. Please add a new auction or wait for approval.</p>
+				@endif
 			</div>
 
 			<div class="col-md-12">

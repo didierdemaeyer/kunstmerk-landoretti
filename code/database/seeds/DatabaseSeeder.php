@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder {
 		 $this->call(RolesTableSeeder::class);
 		 $this->call(CountriesTableSeeder::class);
 		 $this->call(UsersTableSeeder::class);
+		 $this->call(AuctionStylesTableSeeder::class);
+		 $this->call(AuctionsTableSeeder::class);
 
 		Model::reguard();
 	}

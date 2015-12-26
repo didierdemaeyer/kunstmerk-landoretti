@@ -12,6 +12,15 @@
 */
 
 
+/*
+ * Routes accessible to anyone
+ */
+Route::get('/', ['as' => 'home', 'uses' => 'PagesController@home']);
+
+
+/*
+ * Routes only accessible when not logged in
+ */
 Route::group(['before' => 'guest'], function() {
 	// Registration routes
 	Route::get('register', ['as' => 'getRegister', 'uses' => 'AuthController@getRegister']);
@@ -30,7 +39,22 @@ Route::group(['before' => 'guest'], function() {
 });
 
 
-Route::get('/', ['as' => 'home', 'uses' => 'PagesController@home']);
+/*
+ * Routes only accessible when logged in
+ */
+Route::group(['before' => 'auth'], function() {
+	// User
+	Route::get('profile', ['as' => 'profile', 'uses' => 'UsersController@getProfile']);
+
+	// Auctions
+	Route::get('myauctions', ['as' => 'auctions.myauctions', 'uses' => 'AuctionsController@getMyAuctions']);
+	Route::get('myauctions/create', ['as' => 'auctions.create', 'uses' => 'AuctionsController@create']);
+	Route::post('myauctions', ['as' => 'auctions.store', 'uses' => 'AuctionsController@store']);
+});
+
+
+
+
 
 
 
@@ -39,22 +63,10 @@ Route::get('/', ['as' => 'home', 'uses' => 'PagesController@home']);
  * TEMP ROUTES
  */
 
-Route::get('auctions/create', function () {
-	return view('auctions.create');
-});
-
-Route::get('profile', ['as' => 'profile', function () {
-	return view('user.profile');
-}]);
-
-
 
 Route::get('details', function () {
 	return view('details');
 });
-Route::get('myauctions', ['as' => 'myauctions', function () {
-	return view('myauctions');
-}]);
 Route::get('watchlist', ['as' => 'watchlist', function () {
 	return view('watchlist');
 }]);

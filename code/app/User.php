@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -11,9 +12,9 @@ use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
 class User extends Model implements AuthenticatableContract,
-                                    AuthorizableContract,
-                                    CanResetPasswordContract
-{
+	AuthorizableContract,
+	CanResetPasswordContract {
+
 	use Authenticatable, Authorizable, CanResetPassword;
 
 	/**
@@ -70,5 +71,17 @@ class User extends Model implements AuthenticatableContract,
 	public function bids()
 	{
 		return $this->hasMany('App\Bid');
+	}
+
+
+	/*
+	 * Functions
+	 */
+	public function getActiveAuctions()
+	{
+		return $this->auctions()
+			->where('enddate', '>', Carbon::now())
+			->orderBy('enddate', 'ASC')
+			->get();
 	}
 }

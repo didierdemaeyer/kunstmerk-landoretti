@@ -21,7 +21,7 @@ class AuthController extends Controller {
 			// do something?
 		}
 
-		return redirect()->route('home');
+		return redirect()->route('profile');
 	}
 
 	public function getLogout()
@@ -33,9 +33,14 @@ class AuthController extends Controller {
 
 	public function getRegister()
 	{
-		$countries = Country::orderBy('name_en')->get();
+		if (\App::getLocale() == 'en') {
+			$countries = Country::orderBy('name_en')->get();
+		}
+		else {
+			$countries = Country::orderBy('name_nl')->get();
+		}
 
-		return view('auth.register', compact(['countries']));
+		return view('auth.register', compact('countries'));
 	}
 
 	public function postRegister(RegisterUserRequest $request)

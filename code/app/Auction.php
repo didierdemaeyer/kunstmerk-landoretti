@@ -4,9 +4,30 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Auction extends Model
-{
+class Auction extends Model {
 
+	protected $dates = ['enddate'];
+
+	protected $fillable = [
+		'title',
+		'year',
+		'width',
+		'height',
+		'depth',
+		'description_en',
+		'description_nl',
+		'condition_en',
+		'condition_nl',
+		'origin_en',
+		'origin_nl',
+		'image_artwork',
+		'image_signature',
+		'image_optional',
+		'min_price',
+		'max_price',
+		'buyout_price',
+		'enddate'
+	];
 
 	/**
 	 * Relationships

@@ -12,17 +12,11 @@
 		
 		<h1>Add a new auction</h1>
 
-		<form>
+		{!! Form::open(['route' => 'auctions.store', 'enctype' => 'multipart/form-data']) !!}
 
 			<div class="row">
 				<div class="col-md-6">
-					<select class="form-group form-control" name="auction_style">
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
-					</select>
+					{!! Form::select('auction_style', $auction_styles->lists('name_' . App::getLocale(), 'id'), null, ['class' => 'form-group form-control', 'id' => 'country']) !!}
 				</div>
 			</div>
 
@@ -196,7 +190,8 @@
 					<a href="#">Ask a question <i class="fa fa-angle-right"></i></a>
 				</div>
 			</div>
-		</form>
+
+		{!! Form::close() !!}
 
 	</div>
 

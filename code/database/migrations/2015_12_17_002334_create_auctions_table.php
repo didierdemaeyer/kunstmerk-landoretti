@@ -21,7 +21,7 @@ class CreateAuctionsTable extends Migration
             $table->date('year');
             $table->float('width');
             $table->float('height');
-            $table->float('depth');
+            $table->float('depth')->nullable();
             $table->text('description_en');
             $table->text('description_nl');
             $table->text('condition_en');
@@ -30,7 +30,7 @@ class CreateAuctionsTable extends Migration
             $table->string('origin_nl');
             $table->string('image_artwork');
             $table->string('image_signature');
-            $table->string('image_optional');
+            $table->string('image_optional')->nullable();
             $table->decimal('min_price', 15, 2);
             $table->decimal('max_price', 15, 2);
             $table->decimal('buyout_price', 15, 2);
