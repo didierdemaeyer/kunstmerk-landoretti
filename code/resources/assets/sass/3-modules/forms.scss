@@ -38,6 +38,11 @@ form {
 			outline: none;
 			box-shadow: none;
 		}
+
+		&.error {
+			background-color: $errorBgColor;
+			border-color: $errorColor;
+		}
 	}
 
 	select.form-control {
@@ -58,6 +63,14 @@ form {
 	}
 
 	.checkbox {
+
+		&.error {
+			label,
+			a {
+				color: $errorColor;
+			}
+		}
+
 		label {
 			color: $color;
 		}

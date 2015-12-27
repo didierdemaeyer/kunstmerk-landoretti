@@ -12,6 +12,17 @@
 		
 		<h1>Add a new auction</h1>
 
+		{{--Display the validation errors --}}
+		@if (count($errors) > 0)
+			<div class="alert alert-danger">
+				<ul>
+					@foreach ($errors->all() as $error)
+						<li>{{ $error }}</li>
+					@endforeach
+				</ul>
+			</div>
+		@endif
+
 		{!! Form::open(['route' => 'auctions.store', 'enctype' => 'multipart/form-data']) !!}
 
 			<div class="row">
@@ -23,14 +34,22 @@
 			<div class="row">
 				<div class="col-md-6">
 					<div class="form-group">
-						<label for="title">Auction title</label>
-						<input type="text" name="title" class="form-control" id="title" placeholder="Auction title">
+						{!! Form::label('title', 'Auction title') !!}
+						@if ($errors->has('title'))
+							{!! Form::text('title', null, ['class' => 'form-control error', 'id' => 'title', 'placeholder' => 'Auction title'])  !!}
+						@else
+							{!! Form::text('title', null, ['class' => 'form-control', 'id' => 'title', 'placeholder' => 'Auction title'])  !!}
+						@endif
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="form-group">
-						<label for="year">Year</label>
-						<input type="text" name="year" class="form-control" id="year" placeholder="XXXX">
+						{!! Form::label('year', 'Year') !!}
+						@if ($errors->has('year'))
+							{!! Form::text('year', null, ['class' => 'form-control error', 'id' => 'year', 'placeholder' => 'XXXX'])  !!}
+						@else
+							{!! Form::text('year', null, ['class' => 'form-control', 'id' => 'year', 'placeholder' => 'XXXX'])  !!}
+						@endif
 					</div>
 				</div>
 			</div>
@@ -38,20 +57,32 @@
 			<div class="row">
 				<div class="col-md-3">
 					<div class="form-group">
-						<label for="width">Width</label>
-						<input type="text" name="width" class="form-control" id="width" placeholder="XXXX">
+						{!! Form::label('width', 'Width') !!}
+						@if ($errors->has('width'))
+							{!! Form::text('width', null, ['class' => 'form-control error', 'id' => 'width', 'placeholder' => 'XXXX'])  !!}
+						@else
+							{!! Form::text('width', null, ['class' => 'form-control', 'id' => 'width', 'placeholder' => 'XXXX'])  !!}
+						@endif
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="form-group">
-						<label for="height">Height</label>
-						<input type="text" name="height" class="form-control" id="height" placeholder="XXXX">
+						{!! Form::label('height', 'Height') !!}
+						@if ($errors->has('height'))
+							{!! Form::text('height', null, ['class' => 'form-control error', 'id' => 'height', 'placeholder' => 'XXXX'])  !!}
+						@else
+							{!! Form::text('height', null, ['class' => 'form-control', 'id' => 'height', 'placeholder' => 'XXXX'])  !!}
+						@endif
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="form-group">
 						<label for="depth">Depth <span class="optional">(optional)</span></label>
-						<input type="text" name="depth" class="form-control" id="depth" placeholder="XXXX">
+						@if ($errors->has('depth'))
+							{!! Form::text('depth', null, ['class' => 'form-control error', 'id' => 'depth', 'placeholder' => 'XXXX'])  !!}
+						@else
+							{!! Form::text('depth', null, ['class' => 'form-control', 'id' => 'depth', 'placeholder' => 'XXXX'])  !!}
+						@endif
 					</div>
 				</div>
 			</div>
@@ -59,8 +90,12 @@
 			<div class="row">
 				<div class="col-md-9">
 					<div class="form-group">
-						<label for="description_en">Description (English)</label>
-						<textarea name="description_en" class="form-control" id="description_en" placeholder="Describe your auction as thorough as possible"></textarea>
+						{!! Form::label('description_en', 'Description (English)') !!}
+						@if ($errors->has('description_en'))
+							{!! Form::textarea('description_en', null, ['class' => 'form-control error', 'id' => 'description_en', 'placeholder' => 'Describe your auction as thorough as possible'])  !!}
+						@else
+							{!! Form::textarea('description_en', null, ['class' => 'form-control', 'id' => 'description_en', 'placeholder' => 'Describe your auction as thorough as possible'])  !!}
+						@endif
 					</div>
 				</div>
 			</div>
@@ -68,8 +103,12 @@
 			<div class="row">
 				<div class="col-md-9">
 					<div class="form-group">
-						<label for="description_nl">Description (Dutch)</label>
-						<textarea name="description_nl" class="form-control" id="description_nl" placeholder="Describe your auction as thorough as possible"></textarea>
+						{!! Form::label('description_nl', 'Description (Dutch)') !!}
+						@if ($errors->has('description_nl'))
+							{!! Form::textarea('description_nl', null, ['class' => 'form-control error', 'id' => 'description_nl', 'placeholder' => 'Beschrijf je veiling zo grondig mogelijk'])  !!}
+						@else
+							{!! Form::textarea('description_nl', null, ['class' => 'form-control', 'id' => 'description_nl', 'placeholder' => 'Beschrijf je veiling zo grondig mogelijk'])  !!}
+						@endif
 					</div>
 				</div>
 			</div>
@@ -77,8 +116,12 @@
 			<div class="row">
 				<div class="col-md-9">
 					<div class="form-group">
-						<label for="condition_en">Condition (English)</label>
-						<textarea name="condition_en" class="form-control" id="condition_en" placeholder="What's the condition of the artwork"></textarea>
+						{!! Form::label('condition_en', 'Condition (English)') !!}
+						@if ($errors->has('condition_en'))
+							{!! Form::textarea('condition_en', null, ['class' => 'form-control error', 'id' => 'condition_en', 'placeholder' => 'What\'s the conditon of the artwork'])  !!}
+						@else
+							{!! Form::textarea('condition_en', null, ['class' => 'form-control', 'id' => 'condition_en', 'placeholder' => 'What\'s the conditon of the artwork'])  !!}
+						@endif
 					</div>
 				</div>
 			</div>
@@ -86,8 +129,12 @@
 			<div class="row">
 				<div class="col-md-9">
 					<div class="form-group">
-						<label for="condition_nl">Condition (Dutch)</label>
-						<textarea name="condition_nl" class="form-control" id="condition_nl" placeholder="What's the condition of the artwork"></textarea>
+						{!! Form::label('condition_nl', 'Condition (Dutch)') !!}
+						@if ($errors->has('condition_nl'))
+							{!! Form::textarea('condition_nl', null, ['class' => 'form-control error', 'id' => 'condition_nl', 'placeholder' => 'In welke conditie is het kunstwerk?'])  !!}
+						@else
+							{!! Form::textarea('condition_nl', null, ['class' => 'form-control', 'id' => 'condition_nl', 'placeholder' => 'In welke conditie is het kunstwerk?'])  !!}
+						@endif
 					</div>
 				</div>
 			</div>
@@ -95,8 +142,12 @@
 			<div class="row">
 				<div class="col-md-9">
 					<div class="form-group">
-						<label for="origin_en">Origin (English)</label>
-						<input type="text" name="origin_en" class="form-control" id="origin_en" placeholder="What's the origin of the artwork?">
+						{!! Form::label('origin_en', 'Origin (English)') !!}
+						@if ($errors->has('origin_en'))
+							{!! Form::textarea('origin_en', null, ['class' => 'form-control error', 'id' => 'origin_en', 'placeholder' => 'What\'s the origin of the artwork?'])  !!}
+						@else
+							{!! Form::textarea('origin_en', null, ['class' => 'form-control', 'id' => 'origin_en', 'placeholder' => 'What\'s the origin of the artwork?'])  !!}
+						@endif
 					</div>
 				</div>
 			</div>
@@ -104,8 +155,12 @@
 			<div class="row">
 				<div class="col-md-9">
 					<div class="form-group">
-						<label for="origin_nl">Origin (Dutch)</label>
-						<input type="text" name="origin_nl" class="form-control" id="origin_nl" placeholder="What's the origin of the artwork?">
+						{!! Form::label('origin_nl', 'Origin (Dutch)') !!}
+						@if ($errors->has('origin_nl'))
+							{!! Form::textarea('origin_nl', null, ['class' => 'form-control error', 'id' => 'origin_nl', 'placeholder' => 'Van welke origine is het kunstwerk?'])  !!}
+						@else
+							{!! Form::textarea('origin_nl', null, ['class' => 'form-control', 'id' => 'origin_nl', 'placeholder' => 'Van welke origine is het kunstwerk?'])  !!}
+						@endif
 					</div>
 				</div>
 			</div>
@@ -142,20 +197,32 @@
 			<div class="row">
 				<div class="col-md-3">
 					<div class="form-group">
-						<label for="min_price">Minimum estimate price</label>
-						<input type="text" name="min_price" class="form-control" id="min_price" placeholder="XXXX">
+						{!! Form::label('min_price', 'Minimum estimate price') !!}
+						@if ($errors->has('min_price'))
+							{!! Form::text('min_price', null, ['class' => 'form-control error', 'id' => 'min_price', 'placeholder' => 'XXXX'])  !!}
+						@else
+							{!! Form::text('min_price', null, ['class' => 'form-control', 'id' => 'min_price', 'placeholder' => 'XXXX'])  !!}
+						@endif
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="form-group">
-						<label for="max_price">Maximum estimate price</label>
-						<input type="text" name="max_price" class="form-control" id="max_price" placeholder="XXXX">
+						{!! Form::label('max_price', 'Maximum estimate price') !!}
+						@if ($errors->has('max_price'))
+							{!! Form::text('max_price', null, ['class' => 'form-control error', 'id' => 'max_price', 'placeholder' => 'XXXX'])  !!}
+						@else
+							{!! Form::text('max_price', null, ['class' => 'form-control', 'id' => 'max_price', 'placeholder' => 'XXXX'])  !!}
+						@endif
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="form-group">
 						<label for="buyout_price">Buyout price <span class="optional">(optional)</span></label>
-						<input type="text" name="buyout_price" class="form-control" id="buyout_price" placeholder="XXXX">
+						@if ($errors->has('buyout_price'))
+							{!! Form::text('buyout_price', null, ['class' => 'form-control error', 'id' => 'buyout_price', 'placeholder' => 'XXXX'])  !!}
+						@else
+							{!! Form::text('buyout_price', null, ['class' => 'form-control', 'id' => 'buyout_price', 'placeholder' => 'XXXX'])  !!}
+						@endif
 					</div>
 				</div>
 			</div>
@@ -163,8 +230,12 @@
 			<div class="row">
 				<div class="col-md-3">
 					<div class="form-group">
-						<label for="enddate">End date</label>
-						<input type="date" name="enddate" class="form-control" id="enddate" placeholder="DD/MM/YY">
+						{!! Form::label('enddate', 'End date') !!}
+						@if ($errors->has('enddate'))
+							{!! Form::date('enddate', null, ['class' => 'form-control error', 'id' => 'enddate', 'placeholder' => 'DD/MM/YY'])  !!}
+						@else
+							{!! Form::date('enddate', null, ['class' => 'form-control', 'id' => 'enddate', 'placeholder' => 'DD/MM/YY'])  !!}
+						@endif
 					</div>
 				</div>
 				<div class="col-md-6">
@@ -178,9 +249,9 @@
 			</div>
 
 			
-			<div class="form-group checkbox">
+			<div class="form-group checkbox{{ $errors->has('terms_and_conditions') ? ' error' : '' }}">
 				<label>
-					<input type="checkbox" name="terms"> I Agree To <a href="#">The Terms &amp; Conditions</a>
+					<input type="checkbox" name="terms_and_conditions"> I Agree To <a href="#">The Terms &amp; Conditions</a>
 				</label>
 			</div>
 			<button type="submit" class="btn btn-primary">Add Auction</button>
