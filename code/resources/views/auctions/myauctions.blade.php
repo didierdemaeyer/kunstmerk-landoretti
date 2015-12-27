@@ -120,7 +120,7 @@
 						<tbody>
 							@foreach($activeAuctions as $auction)
 								<tr>
-									<td class="img-preview" style="background-image:url('http://lorempixel.com/400/200/');"></td>
+									<td class="img-preview" style="background-image:url({{ $auction->image_artwork }});"></td>
 									<td>
 										<h3>{{ $auction->title }}</h3>
 										<p class="age">{{ strftime('%Y', strtotime($auction->year)) }}, Salvador Dali</p>

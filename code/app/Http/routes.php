@@ -21,7 +21,8 @@ Route::get('/', ['as' => 'home', 'uses' => 'PagesController@home']);
 /*
  * Routes only accessible when not logged in
  */
-Route::group(['before' => 'guest'], function() {
+Route::group(['before' => 'guest'], function ()
+{
 	// Registration routes
 	Route::get('register', ['as' => 'getRegister', 'uses' => 'AuthController@getRegister']);
 	Route::post('register', ['as' => 'postRegister', 'uses' => 'AuthController@postRegister']);
@@ -42,7 +43,8 @@ Route::group(['before' => 'guest'], function() {
 /*
  * Routes only accessible when logged in
  */
-Route::group(['before' => 'auth'], function() {
+Route::group(['before' => 'auth'], function ()
+{
 	// User
 	Route::get('profile', ['as' => 'profile', 'uses' => 'UsersController@getProfile']);
 
@@ -53,23 +55,20 @@ Route::group(['before' => 'auth'], function() {
 });
 
 
-
-
-
-
-
-
 /**
  * TEMP ROUTES
  */
 
 
-Route::get('details', function () {
+Route::get('details', function ()
+{
 	return view('details');
 });
-Route::get('watchlist', ['as' => 'watchlist', function () {
+Route::get('watchlist', ['as' => 'watchlist', function ()
+{
 	return view('watchlist');
 }]);
-Route::get('art', ['as' => 'auctions.overview', function() {
+Route::get('art', ['as' => 'auctions.overview', function ()
+{
 	return view('auctions.overview');
 }]);

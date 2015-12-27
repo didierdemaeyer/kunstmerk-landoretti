@@ -14,6 +14,8 @@ class UsersController extends Controller {
 	{
 		$user = \Auth::user();
 
-		return view('user.profile', compact('user'));
+		$auctions = $user->getActiveAuctions();
+
+		return view('user.profile', compact('user', 'auctions'));
 	}
 }
