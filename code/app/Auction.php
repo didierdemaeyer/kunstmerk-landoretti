@@ -10,6 +10,7 @@ class Auction extends Model {
 
 	protected $fillable = [
 		'title',
+		'artist',
 		'year',
 		'width',
 		'height',

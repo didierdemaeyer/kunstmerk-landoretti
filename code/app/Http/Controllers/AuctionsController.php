@@ -21,8 +21,8 @@ class AuctionsController extends Controller {
 		$pendingAuctions = $user->auctions;
 		$refusedAuctions = $user->auctions;
 		$activeAuctions = $user->getActiveAuctions();
-		$expiredAuctions = $user->auctions;
-		$soldAuctions = $user->auctions;
+		$expiredAuctions = $user->getExpiredAuctions();
+		$soldAuctions = $user->getSoldAuctions();
 
 		return view('auctions.myauctions', compact(
 			'user',
@@ -36,6 +36,7 @@ class AuctionsController extends Controller {
 
 	public function create()
 	{
+		// get auction_styles sorted based on locale
 		if (\App::getLocale() == 'en')
 		{
 			$auction_styles = Auction_style::orderBy('name_en')->get();
@@ -49,32 +50,37 @@ class AuctionsController extends Controller {
 
 	public function store(CreateAuctionRequest $request)
 	{
-		// rename and move files to /img/uploads/
 		$timestamp = time();
 		$destinationPath = 'img/uploads/';
 		$input = $request->all();
-		if ($request->hasFile('image_artwork')) {
-			$file = $request->file('image_artwork');
-			$filename = $timestamp .'_'. $file->getClientOriginalName();
-			$file->move($destinationPath, $filename);
-			$input['image_artwork'] = '/'. $destinationPath . $filename;
-		}
-		if ($request->hasFile('image_signature')) {
-			$file = $request->file('image_signature');
-			$filename = $timestamp .'_'. $file->getClientOriginalName();
-			$file->move($destinationPath, $filename);
-			$input['image_signature'] = '/'. $destinationPath . $filename;
-		}
-		if ($request->hasFile('image_optional')) {
-			$file = $request->file('image_optional');
-			$filename = $timestamp .'_'. $file->getClientOriginalName();
-			$file->move($destinationPath, $filename);
-			$input['image_optional'] = '/'. $destinationPath . $filename;
-		}
-//		$image_artwork = $request->hasFile('image_artwork') ? $request->file('image_artwork')->move(asset('img/uploads'), $timestamp . '_' . $request->getClientOriginalName()) : null;
-//		$image_signature = $request->hasFile('image_signature') ? $request->file('image_signature')->move(asset('img/uploads'), $timestamp . '_' . $request->getClientOriginalName()) : null;
-//		$image_optional = $request->hasFile('image_optional') ? $request->file('image_optional')->move(asset('img/uploads'), $timestamp . '_' . $request->getClientOriginalName()) : null;
 
+		// handle uploaded files
+		if ($request->hasFile('image_artwork'))
+		{
+			$file = $request->file('image_artwork');                      // get the uploaded file
+			$filename = $timestamp . '_' . $file->getClientOriginalName();  // get original filename
+			$file->move($destinationPath, $filename);                     // move file to /img/uploads/
+			$input['image_artwork'] = '/' . $destinationPath . $filename;  // change filename to 'timestamp_filename'
+		}
+		if ($request->hasFile('image_signature'))
+		{
+			$file = $request->file('image_signature');
+			$filename = $timestamp . '_' . $file->getClientOriginalName();
+			$file->move($destinationPath, $filename);
+			$input['image_signature'] = '/' . $destinationPath . $filename;
+		}
+		if ($request->hasFile('image_optional'))
+		{
+			$file = $request->file('image_optional');
+			$filename = $timestamp . '_' . $file->getClientOriginalName();
+			$file->move($destinationPath, $filename);
+			$input['image_optional'] = '/' . $destinationPath . $filename;
+		}
+
+		// set year and enddate to correct format for database
+		$input['enddate'] = Carbon::createFromFormat('d/m/Y H:i:s', $input['enddate'] . '00:00:00');
+
+		// create new auction
 		$auction = Auction::create($input);
 
 		// set auction_style

@@ -16,6 +16,7 @@ elixir(function(mix) {
     	.scripts([
     		'bootstrap.min.js',
     		'bootstrap-filestyle.min.js',
+    		'jquery.countdown.min.js',
     		'app.js'
     	]);
 });

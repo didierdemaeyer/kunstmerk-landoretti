@@ -18,7 +18,8 @@ class CreateAuctionsTable extends Migration
             $table->integer('buyer_id')->unsigned();
             $table->integer('auction_style_id')->unsigned();
             $table->string('title');
-            $table->date('year');
+            $table->string('artist');
+            $table->string('year');
             $table->float('width');
             $table->float('height');
             $table->float('depth')->nullable();
