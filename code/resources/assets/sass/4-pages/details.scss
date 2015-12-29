@@ -127,7 +127,8 @@
 				}
 			}
 
-			.add-watchlist{
+			.watchlist-add,
+			.watchlist-remove {
 				padding: 10px 0px 0px 0px;
 				text-align: center;
 				margin-right: -15px;
@@ -144,6 +145,13 @@
 
 				i{
 					padding-right: 10px;
+				}
+			}
+
+			.watchlist-remove {
+
+				a {
+					color: $errorColor;
 				}
 			}
 		}

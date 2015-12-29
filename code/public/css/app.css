@@ -6868,17 +6868,23 @@ form {
         width: 100px;
         color: #000000;
         margin-right: 20px; }
-    .details .short-details .bid-now .add-watchlist {
+    .details .short-details .bid-now .watchlist-add,
+    .details .short-details .bid-now .watchlist-remove {
       padding: 10px 0px 0px 0px;
       text-align: center;
       margin-right: -15px; }
-      .details .short-details .bid-now .add-watchlist a {
+      .details .short-details .bid-now .watchlist-add a,
+      .details .short-details .bid-now .watchlist-remove a {
         color: #0a1e75;
         text-decoration: underline; }
-        .details .short-details .bid-now .add-watchlist a:hover {
+        .details .short-details .bid-now .watchlist-add a:hover,
+        .details .short-details .bid-now .watchlist-remove a:hover {
           text-decoration: none; }
-      .details .short-details .bid-now .add-watchlist i {
+      .details .short-details .bid-now .watchlist-add i,
+      .details .short-details .bid-now .watchlist-remove i {
         padding-right: 10px; }
+    .details .short-details .bid-now .watchlist-remove a {
+      color: #f00000; }
 
 .details .description-auction {
   width: 100%;
@@ -6989,5 +6995,28 @@ form {
       padding-left: 25px; }
     .my-watchlist .table th:nth-child(n+4) {
       text-align: center; }
+
+.my-watchlist .img-preview {
+  padding: 0; }
+  .my-watchlist .img-preview a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover; }
+    .my-watchlist .img-preview a span {
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      opacity: 0;
+      transition: all 0.3s ease; }
+      .my-watchlist .img-preview a span i {
+        font-size: 6rem;
+        line-height: 136px;
+        color: #ffffff; }
+    .my-watchlist .img-preview a:hover span {
+      opacity: 1;
+      background-color: rgba(0, 0, 0, 0.4); }
 
 /*# sourceMappingURL=app.css.map */

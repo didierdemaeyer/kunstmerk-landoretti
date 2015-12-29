@@ -6,6 +6,7 @@ use App\Auction;
 use App\Auction_style;
 use App\Http\Requests\CreateAuctionRequest;
 use App\User;
+use Auth;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -27,7 +28,7 @@ class AuctionsController extends Controller {
 	
 	public function getMyAuctions()
 	{
-		$user = \Auth::user();
+		$user = Auth::user();
 
 		$pendingAuctions = $user->auctions;
 		$refusedAuctions = $user->auctions;
@@ -99,7 +100,7 @@ class AuctionsController extends Controller {
 		$auction->auction_style()->associate($auction_style);
 
 		// set owner
-		$owner = \Auth::user();
+		$owner = Auth::user();
 		$auction->owner()->associate($owner);
 
 		// save associations
@@ -115,6 +116,16 @@ class AuctionsController extends Controller {
 		// related auctions
 		$related_auctions = Auction::getActiveAuctions(4);
 
-		return view('auctions.show', compact('auction', 'related_auctions'));
+
+		// check if it's in your watchlist
+		$user = Auth::user();
+		if ($user) {
+			$isInWatchlist = $user->watchlist()->find($auction->id) ? true : false;
+		}
+		else {
+			$isInWatchlist = null;
+		}
+
+		return view('auctions.show', compact('auction', 'related_auctions', 'isInWatchlist'));
 	}
 }

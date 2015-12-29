@@ -45,6 +45,13 @@ Route::group(['middleware' => 'auth'], function ()
 	Route::get('myauctions', ['as' => 'auctions.myauctions', 'uses' => 'AuctionsController@getMyAuctions']);
 	Route::get('myauctions/create', ['as' => 'auctions.create', 'uses' => 'AuctionsController@create']);
 	Route::post('myauctions', ['as' => 'auctions.store', 'uses' => 'AuctionsController@store']);
+
+	// Watchlist
+	Route::get('watchlist', ['as' => 'watchlist', 'uses' => 'WatchlistController@getWatchlist']);
+	Route::get('watchlist/active', ['as' => 'watchlist.active', 'uses' => 'WatchlistController@getActiveWatchlist']);
+	Route::get('watchlist/ended', ['as' => 'watchlist.ended', 'uses' => 'WatchlistController@getEndedWatchlist']);
+	Route::get('watchlist/add/{id}', ['as' => 'watchlist.add', 'uses' => 'WatchlistController@addToWatchlist']);
+	Route::get('watchlist/remove/{id}', ['as' => 'watchlist.remove', 'uses' => 'WatchlistController@removeFromWatchlist']);
 });
 
 
@@ -58,13 +65,3 @@ Route::get('logout', ['as' => 'getLogout', 'uses' => 'AuthController@getLogout']
 Route::get('art', ['as' => 'auctions.overview', 'uses' => 'AuctionsController@getOverview']);
 Route::get('art/{slug}', ['as' => 'auctions.show', 'uses' => 'AuctionsController@show']);
 
-
-
-
-/**
- * TEMP ROUTES
- */
-Route::get('watchlist', ['as' => 'watchlist', function ()
-{
-	return view('watchlist');
-}]);

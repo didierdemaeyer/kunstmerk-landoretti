@@ -49,7 +49,13 @@
 						<div class="bid-now-sub">
 							<p><input>BID NOW<i class="fa fa-angle-right"></i></p>
 						</div>
-						<p class="add-watchlist"><a href="#"><i class="fa fa-bars"></i>add to my watchlist</a></p>
+						@if(Auth::user())
+							@if ($isInWatchlist)
+								<p class="watchlist-remove"><a href="{{ route('watchlist.remove', $auction->id) }}"><i class="fa fa-times"></i>remove from my watchlist</a></p>
+							@else
+								<p class="watchlist-add"><a href="{{ route('watchlist.add', $auction->id) }}"><i class="fa fa-bars"></i>add to my watchlist</a></p>
+							@endif
+						@endif
 					</div>
 				</div>
 			</div>
