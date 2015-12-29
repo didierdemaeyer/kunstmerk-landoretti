@@ -64,12 +64,6 @@ Route::get('art/{id}', ['as' => 'auctions.show', 'uses' => 'AuctionsController@s
 /**
  * TEMP ROUTES
  */
-
-
-Route::get('details', function ()
-{
-	return view('details');
-});
 Route::get('watchlist', ['as' => 'watchlist', function ()
 {
 	return view('watchlist');

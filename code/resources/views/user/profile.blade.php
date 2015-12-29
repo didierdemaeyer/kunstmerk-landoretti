@@ -38,7 +38,7 @@
 						<div class="auction-info">
 							<span class="artist">1979, Salvador Dali</span>
 							<span class="title">{{ $auction->title }}</span>
-							<span class="price">&euro; {{ $auction->min_price }}</span>
+							<span class="price">&euro; {{ (float)$auction->min_price }}</span>
 
 							<div class="call-to-action clearfix">
 								<span class="timeleft">25d 14u 44m</span>

@@ -53,7 +53,7 @@
 										<h3>{{ $auction->title }}</h3>
 										<p class="age">{{ $auction->year }}, {{ $auction->artist }}</p>
 									</td>
-									<td><h3>&euro; {{ $auction->min_price }}</h3></td>
+									<td><h3>&euro; {{ (float)$auction->min_price }}</h3></td>
 									<td>
 										<p class="date">{{ strftime('%B %d, %Y', strtotime($auction->enddate)) }}</p>
 										<p class="date">{{ strftime('%H:%M', strtotime($auction->enddate)) }} (GMT)</p>
@@ -91,7 +91,7 @@
 										<h3>{{ $auction->title }}</h3>
 										<p class="age">{{ $auction->year }}, {{ $auction->artist }}</p>
 									</td>
-									<td><h3>&euro; {{ $auction->min_price }}</h3></td>
+									<td><h3>&euro; {{ (float)$auction->min_price }}</h3></td>
 									<td>
 										<p class="date">{{ strftime('%B %d, %Y', strtotime($auction->enddate)) }}</p>
 										<p class="date">{{ strftime('%H:%M', strtotime($auction->enddate)) }} (GMT)</p>
@@ -129,7 +129,7 @@
 										<h3>{{ $auction->title }}</h3>
 										<p class="age">{{ $auction->year }}, {{ $auction->artist }}</p>
 									</td>
-									<td><h3>&euro; {{ $auction->min_price }}</h3></td>
+									<td><h3>&euro; {{ (float)$auction->min_price }}</h3></td>
 									<td>
 										<p class="date">{{ strftime('%B %d, %Y', strtotime($auction->enddate)) }}</p>
 										<p class="date">{{ strftime('%H:%M', strtotime($auction->enddate)) }} (GMT)</p>
@@ -167,7 +167,7 @@
 										<h3>{{ $auction->title }}</h3>
 										<p class="age">{{ $auction->year }}, {{ $auction->artist }}</p>
 									</td>
-									<td><h3>&euro; {{ $auction->min_price }}</h3></td>
+									<td><h3>&euro; {{ (float)$auction->min_price }}</h3></td>
 									<td>
 										<p class="date">{{ strftime('%B %d, %Y', strtotime($auction->enddate)) }}</p>
 										<p class="date">{{ strftime('%H:%M', strtotime($auction->enddate)) }} (GMT)</p>
@@ -205,7 +205,7 @@
 										<h3>{{ $auction->title }}</h3>
 										<p class="age">{{ $auction->year }}, {{ $auction->artist }}</p>
 									</td>
-									<td><h3>&euro; {{ $auction->min_price }}</h3></td>
+									<td><h3>&euro; {{ (float)$auction->min_price }}</h3></td>
 									<td>
 										<p class="date">{{ strftime('%B %d, %Y', strtotime($auction->enddate)) }}</p>
 										<p class="date">{{ strftime('%H:%M', strtotime($auction->enddate)) }} (GMT)</p>

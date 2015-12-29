@@ -41,9 +41,9 @@
 					<a class="more" href="#">more</a>
 					<div class="bid-now">
 						<h5>Estimated Price: </h5>
-						<h3>&euro; {{ $auction->min_price }} - &euro; {{ $auction->max_price }}</h3>
+						<h3>&euro; {{ (float)$auction->min_price }} - &euro; {{ (float)$auction->max_price }}</h3>
 						@if ($auction->buyout_price)
-							<a class="buy-now" href="#">Buy now for &euro; {{ $auction->buyout_price }}</a>
+							<a class="buy-now" href="#">Buy now for &euro; {{ (float)$auction->buyout_price }}</a>
 						@endif
 						<p>bids: 7 </p>
 						<div class="bid-now-sub">
@@ -92,7 +92,7 @@
 								<div class="auction-info">
 									<span class="artist">1979, Salvador Dali</span>
 									<span class="title">{{ $auction->title }}</span>
-									<span class="price">&euro; {{ $auction->min_price }}</span>
+									<span class="price">&euro; {{ (float)$auction->min_price }}</span>
 
 									<div class="call-to-action clearfix">
 										<span class="timeleft">25d 14u 44m</span>
