@@ -108,9 +108,9 @@ class AuctionsController extends Controller {
 		return redirect()->route('auctions.myauctions');
 	}
 
-	public function show($id)
+	public function show($slug)
 	{
-		$auction = Auction::findOrFail($id);
+		$auction = Auction::findBySlugOrFail($slug);
 
 		// related auctions
 		$related_auctions = Auction::getActiveAuctions(4);

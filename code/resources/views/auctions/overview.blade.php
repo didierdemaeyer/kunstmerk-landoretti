@@ -112,18 +112,18 @@
 				<div class="small-previews">
 
 					@foreach($auctions_1 as $auction)
-						<div class="auction-preview" data-id="{{ $auction->id }}">
-							<a href="{{ route('auctions.show', $auction->id) }}" class="auction-image" style="background-image:url({{ $auction->image_artwork }});"><span class="overlay"><i class="fa fa-search"></i></span></a>
+						<div class="auction-preview">
+							<a href="{{ route('auctions.show', $auction->slug) }}" class="auction-image" style="background-image:url({{ $auction->image_artwork }});"><span class="overlay"><i class="fa fa-search"></i></span></a>
 
 							<div class="auction-info">
-								<span class="artist">1979, Salvador Dali</span>
+								<span class="artist">{{ $auction->year }}, {{ $auction->artist }}</span>
 								<span class="title">{{ $auction->title }}</span>
 								<span class="price">&euro; {{ (float)$auction->min_price }}</span>
 
 								<div class="call-to-action clearfix">
 									<span class="timeleft" data-time="{{ $auction->enddate }}"></span>
 
-									<a href="{{ route('auctions.show', $auction->id) }}" class="btn btn-visit-auction">Visit Auction <i class="fa fa-angle-right"></i></a>
+									<a href="{{ route('auctions.show', $auction->slug) }}" class="btn btn-visit-auction">Visit Auction <i class="fa fa-angle-right"></i></a>
 								</div>
 							</div>
 						</div>
@@ -138,18 +138,18 @@
 			<div class="col-md-12">
 
 				@foreach($auctions_2 as $auction)
-					<div class="auction-preview" data-id="{{ $auction->id }}">
-						<a href="{{ route('auctions.show', $auction->id) }}" class="auction-image" style="background-image:url({{ $auction->image_artwork }});"><span class="overlay"><i class="fa fa-search"></i></span></a>
+					<div class="auction-preview">
+						<a href="{{ route('auctions.show', $auction->slug) }}" class="auction-image" style="background-image:url({{ $auction->image_artwork }});"><span class="overlay"><i class="fa fa-search"></i></span></a>
 
 						<div class="auction-info">
-							<span class="artist">1979, Salvador Dali</span>
+							<span class="artist">{{ $auction->year }}, {{ $auction->artist }}</span>
 							<span class="title">{{ $auction->title }}</span>
 							<span class="price">&euro; {{ (float)$auction->min_price }}</span>
 
 							<div class="call-to-action clearfix">
 								<span class="timeleft" data-time="{{ $auction->enddate }}"></span>
 
-								<a href="{{ route('auctions.show', $auction->id) }}" class="btn btn-visit-auction">Visit Auction <i class="fa fa-angle-right"></i></a>
+								<a href="{{ route('auctions.show', $auction->slug) }}" class="btn btn-visit-auction">Visit Auction <i class="fa fa-angle-right"></i></a>
 							</div>
 						</div>
 					</div>

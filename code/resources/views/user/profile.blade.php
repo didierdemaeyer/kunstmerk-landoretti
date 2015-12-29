@@ -33,17 +33,17 @@
 
 				@foreach ($auctions as $auction)
 					<div class="auction-preview">
-						<a href="#" class="auction-image" style="background-image:url({{ $auction->image_artwork }});"><span class="overlay"><i class="fa fa-search"></i></span></a>
+						<a href="{{ route('auctions.show', $auction->slug) }}" class="auction-image" style="background-image:url({{ $auction->image_artwork }});"><span class="overlay"><i class="fa fa-search"></i></span></a>
 
 						<div class="auction-info">
-							<span class="artist">1979, Salvador Dali</span>
+							<span class="artist">{{ $auction->year }}, {{ $auction->artist }}</span>
 							<span class="title">{{ $auction->title }}</span>
 							<span class="price">&euro; {{ (float)$auction->min_price }}</span>
 
 							<div class="call-to-action clearfix">
 								<span class="timeleft">25d 14u 44m</span>
 
-								<a href="#" class="btn btn-visit-auction">Visit Auction <i class="fa fa-angle-right"></i></a>
+								<a href="{{ route('auctions.show', $auction->slug) }}" class="btn btn-visit-auction">Visit Auction <i class="fa fa-angle-right"></i></a>
 							</div>
 						</div>
 					</div>

@@ -56,7 +56,7 @@ Route::get('logout', ['as' => 'getLogout', 'uses' => 'AuthController@getLogout']
 
 // Auction routes
 Route::get('art', ['as' => 'auctions.overview', 'uses' => 'AuctionsController@getOverview']);
-Route::get('art/{id}', ['as' => 'auctions.show', 'uses' => 'AuctionsController@show']);
+Route::get('art/{slug}', ['as' => 'auctions.show', 'uses' => 'AuctionsController@show']);
 
 
 
