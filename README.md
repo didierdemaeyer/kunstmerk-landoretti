@@ -9,6 +9,7 @@ Web development 3 - Periode 2 examenopdracht
 - Slick (carousel): http://kenwheeler.github.io/slick/
 - Bootstrap Filestyle: http://markusslima.github.io/bootstrap-filestyle/
 - jQuery Countdown: http://hilios.github.io/jQuery.countdown/
+- Featherlight (lightbox): http://noelboss.github.io/featherlight/
 
 ### CSS
 

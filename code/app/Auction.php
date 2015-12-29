@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Auction extends Model {
@@ -53,4 +54,17 @@ class Auction extends Model {
 	{
 		return $this->belongsTo('App\Auction_style');
 	}
+
+
+	/**
+	 * Functions
+	 */
+
+	public static function getActiveAuctions($number)
+	{
+		return Auction::where('enddate', '>', Carbon::now())
+			->orderBy('enddate', 'ASC')
+			->paginate($number);
+	}
+
 }

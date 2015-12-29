@@ -48,7 +48,7 @@
 							<tbody>
 							@foreach($pendingAuctions as $auction)
 								<tr>
-									<td class="img-preview" style="background-image:url({{ $auction->image_artwork }});"></td>
+									<td class="img-preview"><a href="{{ route('auctions.show', $auction->id) }}" style="background-image:url({{ $auction->image_artwork }});"><span class="overlay"><i class="fa fa-search"></i></span></a></td>
 									<td>
 										<h3>{{ $auction->title }}</h3>
 										<p class="age">{{ $auction->year }}, {{ $auction->artist }}</p>
@@ -86,7 +86,7 @@
 							<tbody>
 							@foreach($refusedAuctions as $auction)
 								<tr>
-									<td class="img-preview" style="background-image:url({{ $auction->image_artwork }});"></td>
+									<td class="img-preview"><a href="{{ route('auctions.show', $auction->id) }}" style="background-image:url({{ $auction->image_artwork }});"><span class="overlay"><i class="fa fa-search"></i></span></a></td>
 									<td>
 										<h3>{{ $auction->title }}</h3>
 										<p class="age">{{ $auction->year }}, {{ $auction->artist }}</p>
@@ -124,7 +124,7 @@
 							<tbody>
 							@foreach($activeAuctions as $auction)
 								<tr>
-									<td class="img-preview" style="background-image:url({{ $auction->image_artwork }});"></td>
+									<td class="img-preview"><a href="{{ route('auctions.show', $auction->id) }}" style="background-image:url({{ $auction->image_artwork }});"><span class="overlay"><i class="fa fa-search"></i></span></a></td>
 									<td>
 										<h3>{{ $auction->title }}</h3>
 										<p class="age">{{ $auction->year }}, {{ $auction->artist }}</p>
@@ -162,7 +162,7 @@
 							<tbody>
 							@foreach($expiredAuctions as $auction)
 								<tr>
-									<td class="img-preview" style="background-image:url({{ $auction->image_artwork }});"></td>
+									<td class="img-preview"><a href="{{ route('auctions.show', $auction->id) }}" style="background-image:url({{ $auction->image_artwork }});"><span class="overlay"><i class="fa fa-search"></i></span></a></td>
 									<td>
 										<h3>{{ $auction->title }}</h3>
 										<p class="age">{{ $auction->year }}, {{ $auction->artist }}</p>
@@ -200,7 +200,7 @@
 							<tbody>
 							@foreach($soldAuctions as $auction)
 								<tr>
-									<td class="img-preview" style="background-image:url({{ $auction->image_artwork }});"></td>
+									<td class="img-preview"><a href="{{ route('auctions.show', $auction->id) }}" style="background-image:url({{ $auction->image_artwork }});"><span class="overlay"><i class="fa fa-search"></i></span></a></td>
 									<td>
 										<h3>{{ $auction->title }}</h3>
 										<p class="age">{{ $auction->year }}, {{ $auction->artist }}</p>
@@ -233,7 +233,7 @@
 			$.each($('.remaining-time'), function () {
 				var time = $(this).data('time');
 				$(this).countdown(time, function (event) {
-					$(this).html(event.strftime('%Dd %Hu %Mm'));
+					$(this).html(event.strftime('%-Dd %Hu %Mm'));
 				});
 			});
 		})(jQuery);

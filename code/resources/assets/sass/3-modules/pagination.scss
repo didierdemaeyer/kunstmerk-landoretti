@@ -1,0 +1,43 @@
+.pagination-container {
+	margin-top: -72px;
+
+	.pagination {
+		margin-top: 10px;
+	}
+}
+
+.pagination {
+	display: block;
+	float: right;
+
+	.disabled {
+		display: none;
+	}
+
+	li span,
+	li a {
+		color: $color;
+		border: none;
+		padding: 2px;
+		margin: 3px;
+
+		&:hover,
+		&:focus {
+			background-color: transparent;
+			color: $accent;
+		}
+	}
+
+	.active span {
+		background-color: transparent;
+		color: $color;
+		font-weight: bold;
+
+		&:hover,
+		&:focus {
+			background-color: transparent;
+			color: $color;
+		}
+	}
+
+}

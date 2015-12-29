@@ -14,6 +14,17 @@ use App\Http\Controllers\Controller;
 
 class AuctionsController extends Controller {
 
+	public function getOverview()
+	{
+		$auctions = Auction::getActiveAuctions(8);
+
+		// divide all auctions into 2 variables, easier for use in view
+		$auctions_1 = $auctions->slice(0, 4);
+		$auctions_2 = $auctions->slice(4, 4);
+
+		return view('auctions.overview', compact('auctions', 'auctions_1', 'auctions_2'));
+	}
+	
 	public function getMyAuctions()
 	{
 		$user = \Auth::user();
@@ -97,5 +108,13 @@ class AuctionsController extends Controller {
 		return redirect()->route('auctions.myauctions');
 	}
 
+	public function show($id)
+	{
+		$auction = Auction::findOrFail($id);
 
+		// related auctions
+		$related_auctions = Auction::getActiveAuctions(4);
+
+		return view('auctions.show', compact('auction', 'related_auctions'));
+	}
 }

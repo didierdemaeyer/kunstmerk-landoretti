@@ -16,6 +16,9 @@
 	{{-- Styles --}}
 	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	@yield('links')
+
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>

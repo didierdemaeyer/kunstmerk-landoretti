@@ -13,22 +13,15 @@
 
 
 /*
- * Routes accessible to anyone
- */
-Route::get('/', ['as' => 'home', 'uses' => 'PagesController@home']);
-
-
-/*
  * Routes only accessible when not logged in
  */
-Route::group(['before' => 'guest'], function ()
+Route::group(['middleware' => 'guest'], function ()
 {
 	// Registration routes
 	Route::get('register', ['as' => 'getRegister', 'uses' => 'AuthController@getRegister']);
 	Route::post('register', ['as' => 'postRegister', 'uses' => 'AuthController@postRegister']);
-	// Authentication Routes
+	// Login route
 	Route::post('login', ['as' => 'postLogin', 'uses' => 'AuthController@postLogin']);
-	Route::get('logout', ['as' => 'getLogout', 'uses' => 'AuthController@getLogout']);
 
 	// Password reset link request routes...
 	Route::get('password/email', 'Auth\PasswordController@getEmail');
@@ -43,7 +36,7 @@ Route::group(['before' => 'guest'], function ()
 /*
  * Routes only accessible when logged in
  */
-Route::group(['before' => 'auth'], function ()
+Route::group(['middleware' => 'auth'], function ()
 {
 	// User
 	Route::get('profile', ['as' => 'profile', 'uses' => 'UsersController@getProfile']);
@@ -53,6 +46,19 @@ Route::group(['before' => 'auth'], function ()
 	Route::get('myauctions/create', ['as' => 'auctions.create', 'uses' => 'AuctionsController@create']);
 	Route::post('myauctions', ['as' => 'auctions.store', 'uses' => 'AuctionsController@store']);
 });
+
+
+/*
+ * Routes accessible to anyone
+ */
+Route::get('/', ['as' => 'home', 'uses' => 'PagesController@home']);
+Route::get('logout', ['as' => 'getLogout', 'uses' => 'AuthController@getLogout']);
+
+// Auction routes
+Route::get('art', ['as' => 'auctions.overview', 'uses' => 'AuctionsController@getOverview']);
+Route::get('art/{id}', ['as' => 'auctions.show', 'uses' => 'AuctionsController@show']);
+
+
 
 
 /**
@@ -67,8 +73,4 @@ Route::get('details', function ()
 Route::get('watchlist', ['as' => 'watchlist', function ()
 {
 	return view('watchlist');
-}]);
-Route::get('art', ['as' => 'auctions.overview', function ()
-{
-	return view('auctions.overview');
 }]);

@@ -6218,9 +6218,7 @@ form {
       width: 136px;
       height: 136px;
       border-bottom: 0px;
-      border-top: 0px;
-      background-size: cover;
-      background-position: center; }
+      border-top: 0px; }
   .my-auctions .add-button, .my-watchlist .add-button {
     padding: 20px 15px 20px 15px;
     border: 1px solid #e5e5e5;
@@ -6507,6 +6505,40 @@ form {
   border: none;
   border-radius: 0;
   padding: 30px 10px; }
+
+.pagination-container {
+  margin-top: -72px; }
+  .pagination-container .pagination {
+    margin-top: 10px; }
+
+.pagination {
+  display: block;
+  float: right; }
+  .pagination .disabled {
+    display: none; }
+  .pagination li span,
+  .pagination li a {
+    color: #595959;
+    border: none;
+    padding: 2px;
+    margin: 3px; }
+    .pagination li span:hover, .pagination li span:focus,
+    .pagination li a:hover,
+    .pagination li a:focus {
+      background-color: transparent;
+      color: #01a6a0; }
+  .pagination .active span {
+    background-color: transparent;
+    color: #595959;
+    font-weight: bold; }
+    .pagination .active span:hover, .pagination .active span:focus {
+      background-color: transparent;
+      color: #595959; }
+
+.featherlight .featherlight-content {
+  padding: 0;
+  border-bottom: none;
+  overflow: visible; }
 
 .panel-profile {
   border-color: #dbdbdb;
@@ -6849,6 +6881,8 @@ form {
         padding-right: 10px; }
 
 .details .description-auction {
+  width: 100%;
+  height: auto;
   border: 1px solid #dbdbdb;
   margin: 45px 0px 45px 0px;
   padding: 35px 5px 35px 5px;
@@ -6858,8 +6892,10 @@ form {
     margin-bottom: 0px;
     color: black; }
   .details .description-auction .description-left {
+    height: 500px;
     padding: 0px 45px 0px 15px; }
   .details .description-auction .description-right {
+    height: 100%;
     padding-left: 25px;
     border-left: 1px solid #dbdbdb; }
     .details .description-auction .description-right p {
@@ -6888,6 +6924,29 @@ form {
 
 .my-auctions .table th:nth-child(n+3) {
   text-align: center; }
+
+.my-auctions .img-preview {
+  padding: 0; }
+  .my-auctions .img-preview a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover; }
+    .my-auctions .img-preview a span {
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      opacity: 0;
+      transition: all 0.3s ease; }
+      .my-auctions .img-preview a span i {
+        font-size: 6rem;
+        line-height: 136px;
+        color: #ffffff; }
+    .my-auctions .img-preview a:hover span {
+      opacity: 1;
+      background-color: rgba(0, 0, 0, 0.4); }
 
 .my-watchlist .filter {
   margin-left: 31px; }
