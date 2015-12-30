@@ -15,11 +15,14 @@ class DatabaseSeeder extends Seeder {
 		Model::unguard();
 
 		// $this->call(UsersTableSeeder::class);
-		 $this->call(RolesTableSeeder::class);
-		 $this->call(CountriesTableSeeder::class);
-		 $this->call(UsersTableSeeder::class);
-		 $this->call(AuctionStylesTableSeeder::class);
-		 $this->call(AuctionsTableSeeder::class);
+		$this->call(RolesTableSeeder::class);
+		$this->call(CountriesTableSeeder::class);
+		$this->call(UsersTableSeeder::class);
+		$this->call(AuctionStylesTableSeeder::class);
+		$this->call(AuctionsTableSeeder::class);
+		$this->call(CategoriesTableSeeder::class);
+		$this->call(FaqsTableSeeder::class);
+		$this->call(FaqCategorieTableSeeder::class);
 
 		Model::reguard();
 	}

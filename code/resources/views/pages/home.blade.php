@@ -79,9 +79,9 @@
 		<div class="popular-home row">
 			<h1>Most popular this week</h1>
 			<div class="col-md-12">
-				<a href="#" class="popular-image" style="background-image:url('http://lorempixel.com/400/400/');"><span class="overlay"><i class="fa fa-search"></i></span></a>
-				<a href="#" class="popular-image" style="background-image:url('http://lorempixel.com/400/400/');"><span class="overlay"><i class="fa fa-search"></i></span></a>
-				<a href="#" class="popular-image" style="background-image:url('http://lorempixel.com/400/400/');"><span class="overlay"><i class="fa fa-search"></i></span></a>
+				@foreach($auctions as $auction)
+					<a href="{{ route('auctions.show', $auction->slug) }}" class="popular-image" style="background-image:url({{ $auction->image_artwork }});"><span class="overlay"><i class="fa fa-search"></i></span></a>
+				@endforeach
 			</div>
 		</div>
 	</div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Auction;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -11,6 +12,8 @@ class PagesController extends Controller
 {
 	public function home()
 	{
-		return view('pages.home');
+		$auctions = Auction::getActiveAuctions(3);
+
+		return view('pages.home', compact('auctions'));
 	}
 }

@@ -13,7 +13,7 @@ class Categorie extends Model
 	 * Relationships
 	 */
 
-	public function faq()
+	public function faqs()
 	{
 		return $this->belongsToMany('App\Faq', 'faq_categorie');
 	}
