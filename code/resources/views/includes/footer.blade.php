@@ -8,7 +8,7 @@
 			<h4>HELP</h4>
 			<a href="#">Terms of Service</a>
 			<a href="#">Privacy Policy</a>
-			<a href="#">FAQ</a>
+			<a href="{{ route('faq') }}">FAQ</a>
 			<a href="#">Contact Us</a>
 			<a href="#">About Us</a>
 			<br>
@@ -95,9 +95,9 @@
 			<ul class="nav-links">
 				<li><a href="{{ route('home') }}">Home</a></li>
 				<li><a href="{{ route('auctions.overview') }}">Art</a></li>
-				<li><a href="">ISearch</a></li>
 				<li><a href="{{ route('auctions.myauctions') }}">MyAuctions</a></li>
 				<li><a href="">MyBids</a></li>
+				<li><a href="{{ route('faq') }}">FAQ</a></li>
 				<li><a href="">Contact</a></li>
 			</ul>
 

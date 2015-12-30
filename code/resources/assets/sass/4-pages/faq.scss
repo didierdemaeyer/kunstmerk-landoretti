@@ -1,0 +1,59 @@
+.faqs {
+	.faq-overview {
+		border: 1px solid $borderColor;
+		padding: 40px 50px;
+		margin-top: 40px;
+
+		a {
+			display: block;
+			color: $accent;
+			text-decoration: underline;
+			font-weight: bold;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+	.question {
+		color: $accentBlue;
+
+		.col-md-1 h3 {
+			color: $accentBlue;
+			font-weight: normal;
+		}
+
+		p,
+		h3 {
+			margin-top: 40px;
+			margin-bottom: 20px;
+			font-weight: bold;
+		}
+
+		p {
+			font-size: 1.4em;
+		}
+	}
+
+	.answer {
+		height: auto;
+		border-bottom: 1px solid $borderColor;
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+		p,
+		h3 {
+			margin-bottom: 0px;
+			margin-top: 0px;
+			padding-bottom: 30px;
+			font-weight: normal;
+		}
+	}
+
+	hr {
+		margin: 0px;
+	}
+}

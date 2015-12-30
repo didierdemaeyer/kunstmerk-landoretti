@@ -58,8 +58,11 @@ Route::group(['middleware' => 'auth'], function ()
 /*
  * Routes accessible to anyone
  */
-Route::get('/', ['as' => 'home', 'uses' => 'PagesController@home']);
+
+Route::get('/', ['as' => 'home', 'uses' => 'PagesController@getHome']);
 Route::get('logout', ['as' => 'getLogout', 'uses' => 'AuthController@getLogout']);
+
+Route::get('/faq', ['as' => 'faq', 'uses' => 'PagesController@getFaq']);
 
 // Auction routes
 Route::get('art', ['as' => 'auctions.overview', 'uses' => 'AuctionsController@getOverview']);

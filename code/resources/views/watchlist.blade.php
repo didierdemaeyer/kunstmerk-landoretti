@@ -27,9 +27,9 @@
 
 				<div class="col-md-12">
 					<div class="filter">
-						<a class="active" href="#">all(11)</a> |
-						<a href="#">active(8)</a> |
-						<a href="#">ended(3)</a>
+						<a class="active" href="#">all({{ $count_all_auctions }})</a> |
+						<a href="#">active({{ $count_active_auctions }})</a> |
+						<a href="#">ended({{ $count_ended_auctions }})</a>
 					</div>
 				</div>
 				<div class="col-md-12">
@@ -49,9 +49,9 @@
 							@foreach($auctions as $auction)
 								<tr>
 									<td><input type="checkbox" name="checkbox"></td>
-									<td class="img-preview"><a href="{{ route('auctions.show', $auction->slug) }}"
-									                           style="background-image:url({{ $auction->image_artwork }});"><span
-													class="overlay"><i class="fa fa-search"></i></span></a></td>
+									<td class="img-preview">
+										<a href="{{ route('auctions.show', $auction->slug) }}" style="background-image:url({{ $auction->image_artwork }});"><span class="overlay"><i class="fa fa-search"></i></span></a>
+									</td>
 									<td>
 										<h3>{{ $auction->title }}</h3>
 										<p class="age">{{ $auction->year }}, {{ $auction->artist }}</p>
