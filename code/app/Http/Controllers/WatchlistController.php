@@ -96,7 +96,18 @@ class WatchlistController extends Controller {
 	{
 		$user = Auth::user();
 
-		// for every auctions if selected remove from watchlist
+		// detach all selected auctions in auction_to_detach[] array from watchlist
+		$user->watchlist()->detach($request->get('auction_to_detach'));
+
+		return back();
+	}
+
+	public function clearAll()
+	{
+		$user = Auth::user();
+
+		// detach all auctions from watchlist
+		$user->watchlist()->detach();
 
 		return back();
 	}

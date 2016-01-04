@@ -52,6 +52,8 @@ Route::group(['middleware' => 'auth'], function ()
 	Route::get('watchlist/ended', ['as' => 'watchlist.ended', 'uses' => 'WatchlistController@getEndedWatchlist']);
 	Route::get('watchlist/add/{id}', ['as' => 'watchlist.add', 'uses' => 'WatchlistController@addToWatchlist']);
 	Route::get('watchlist/remove/{id}', ['as' => 'watchlist.remove', 'uses' => 'WatchlistController@removeFromWatchlist']);
+	Route::post('watchlist/remove-multiple', ['as' => 'watchlist.removeMultiple', 'uses' => 'WatchlistController@removeMultipleFromWatchlist']);
+	Route::get('watchlist/clear-all', ['as' => 'watchlist.clearAll', 'uses' => 'WatchlistController@clearAll']);
 });
 
 
