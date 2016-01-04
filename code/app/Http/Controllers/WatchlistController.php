@@ -21,23 +21,55 @@ class WatchlistController extends Controller {
 		$count_active_auctions = $user->watchlist()->where('enddate', '>', Carbon::now())->count();
 		$count_ended_auctions = $user->watchlist()->where('enddate', '<', Carbon::now())->count();
 
-		return view('watchlist', compact('auctions', 'count_all_auctions', 'count_active_auctions', 'count_ended_auctions'));
+		$watchlist_filter = 'all';
+
+		return view('watchlist', compact(
+			'auctions',
+			'count_all_auctions',
+			'count_active_auctions',
+			'count_ended_auctions',
+			'watchlist_filter'
+		));
 	}
 
 	public function getActiveWatchlist()
 	{
 		$user = Auth::user();
-		$auctions = $user->watchlist()->where('enddate', '>', Carbon::now());   // get enddate > Carbon::now()
+		$auctions = $user->watchlist()->where('enddate', '>', Carbon::now())->get();   // get enddate > Carbon::now()
 
-		return view('watchlist', compact('auctions'));
+		$count_all_auctions = $user->watchlist()->count();
+		$count_active_auctions = $user->watchlist()->where('enddate', '>', Carbon::now())->count();
+		$count_ended_auctions = $user->watchlist()->where('enddate', '<', Carbon::now())->count();
+
+		$watchlist_filter = 'active';
+
+		return view('watchlist', compact(
+			'auctions',
+			'count_all_auctions',
+			'count_active_auctions',
+			'count_ended_auctions',
+			'watchlist_filter'
+		));
 	}
 
 	public function getEndedWatchlist()
 	{
 		$user = Auth::user();
-		$auctions = $user->watchlist;   // get enddate < Carbon::now()
+		$auctions = $user->watchlist()->where('enddate', '<', Carbon::now())->get();   // get enddate > Carbon::now()
 
-		return view('watchlist', compact('auctions'));
+		$count_all_auctions = $user->watchlist()->count();
+		$count_active_auctions = $user->watchlist()->where('enddate', '>', Carbon::now())->count();
+		$count_ended_auctions = $user->watchlist()->where('enddate', '<', Carbon::now())->count();
+
+		$watchlist_filter = 'ended';
+
+		return view('watchlist', compact(
+			'auctions',
+			'count_all_auctions',
+			'count_active_auctions',
+			'count_ended_auctions',
+			'watchlist_filter'
+		));
 	}
 
 	public function addToWatchlist($id)
@@ -56,6 +88,15 @@ class WatchlistController extends Controller {
 		$auction = Auction::findOrFail($id);
 
 		$user->watchlist()->detach($auction);
+
+		return back();
+	}
+
+	public function removeMultipleFromWatchlist(Request $request)
+	{
+		$user = Auth::user();
+
+		// for every auctions if selected remove from watchlist
 
 		return back();
 	}

@@ -85,7 +85,7 @@
 		</div>
 	</div>
 
-	@include('includes.breadcrumbs')
+	{!! Breadcrumbs::render('art')  !!}
 
 	<div class="container">
 		<div class="pagination-container">

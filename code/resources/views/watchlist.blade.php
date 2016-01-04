@@ -3,7 +3,15 @@
 @section('content')
 
 	@include('includes/header')
-	@include('includes/breadcrumbs')
+
+	@if($watchlist_filter == 'active')
+		{!! Breadcrumbs::render('watchlist.active')  !!}
+	@elseif($watchlist_filter == 'ended')
+		{!! Breadcrumbs::render('watchlist.ended')  !!}
+	@else {{-- All --}}
+		{!! Breadcrumbs::render('watchlist')  !!}
+	@endif
+
 	<div class="container">
 		<div class="my-watchlist">
 			<div class="row">
@@ -27,9 +35,9 @@
 
 				<div class="col-md-12">
 					<div class="filter">
-						<a class="active" href="#">all({{ $count_all_auctions }})</a> |
-						<a href="#">active({{ $count_active_auctions }})</a> |
-						<a href="#">ended({{ $count_ended_auctions }})</a>
+						<a {!! $watchlist_filter == 'all' ? 'class="active"' : '' !!} href="{{ route('watchlist') }}">all({{ $count_all_auctions }})</a> |
+						<a {!! $watchlist_filter == 'active' ? 'class="active"' : '' !!} href="{{ route('watchlist.active') }}">active({{ $count_active_auctions }})</a> |
+						<a {!! $watchlist_filter == 'ended' ? 'class="active"' : '' !!} href="{{ route('watchlist.ended') }}">ended({{ $count_ended_auctions }})</a>
 					</div>
 				</div>
 				<div class="col-md-12">

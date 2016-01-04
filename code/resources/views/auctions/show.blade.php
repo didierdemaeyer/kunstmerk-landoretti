@@ -9,7 +9,8 @@
 @section('content')
 
 	@include('includes/header')
-	@include('includes/breadcrumbs')
+
+	{!! Breadcrumbs::render('art.show', $auction) !!}
 
 	<div class="container">
 		<div class="details">

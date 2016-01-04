@@ -154,6 +154,7 @@ return [
 		Collective\Html\HtmlServiceProvider::class,
 		Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 		'Cviebrock\EloquentSluggable\SluggableServiceProvider',
+		DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
 	],
 
 	/*
@@ -208,6 +209,7 @@ return [
 		'Debugbar'  => Barryvdh\Debugbar\Facade::class,
 		'Form'      => Collective\Html\FormFacade::class,
 		'Html'      => Collective\Html\HtmlFacade::class,
+		'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
 	],
 
 ];

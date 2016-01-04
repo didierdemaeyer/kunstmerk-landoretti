@@ -3,7 +3,8 @@
 @section('content')
 
 	@include('includes/header')
-	@include('includes/breadcrumbs')
+
+	{!! Breadcrumbs::render('myauctions')  !!}
 
 	{{-- Set local to dutch or english based on cookie --}}
 	<?php

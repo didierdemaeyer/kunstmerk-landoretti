@@ -5,8 +5,8 @@
 @section('content')
 
 	@include('includes.header')
-	@include('includes.breadcrumbs')
 
+	{!! Breadcrumbs::render('register')  !!}
 
 	<div class="container">
 

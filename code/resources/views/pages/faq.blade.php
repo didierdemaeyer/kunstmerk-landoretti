@@ -3,7 +3,8 @@
 @section('content')
 
 	@include('includes.header')
-	@include('includes.breadcrumbs')
+
+	{!! Breadcrumbs::render('faq')  !!}
 
 	<div class="container faqs">
 		<div class="row">
