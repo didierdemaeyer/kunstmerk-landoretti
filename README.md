@@ -21,3 +21,4 @@ Web development 3 - Periode 2 examenopdracht
 
 - laravelcollective/html: https://laravelcollective.com/docs/5.1/html
 - Eloquent-Sluggable: https://github.com/cviebrock/eloquent-sluggable
+- Laravel Breadcrumbs 3: https://github.com/davejamesmiller/laravel-breadcrumbs
