@@ -18,6 +18,13 @@ Breadcrumbs::register('faq', function ($breadcrumbs)
 	$breadcrumbs->push('Faq', route('faq'));
 });
 
+// Home > Contact
+Breadcrumbs::register('contact', function ($breadcrumbs)
+{
+	$breadcrumbs->parent('home');
+	$breadcrumbs->push('Contact', route('getContact'));
+});
+
 // Home > Art
 Breadcrumbs::register('art', function ($breadcrumbs)
 {

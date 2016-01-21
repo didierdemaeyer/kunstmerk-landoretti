@@ -6976,17 +6976,21 @@ form {
   .details .description-auction .description-left {
     padding: 0px 45px 0px 15px; }
   .details .description-auction .description-right {
+    display: block;
+    min-height: 100%;
     padding-left: 25px;
     border-left: 1px solid #dbdbdb; }
     .details .description-auction .description-right p {
       margin-bottom: 0px; }
-    .details .description-auction .description-right div {
+    .details .description-auction .description-right .ask-a-question {
+      display: block;
       margin-top: 60px;
+      padding: 5px 10px 5px 10px;
       background-color: #595959;
       color: white;
-      padding: 5px 10px 5px 10px;
       text-align: center;
-      font-weight: bold; }
+      font-weight: bold;
+      text-transform: uppercase; }
 
 .section-related {
   background-color: #f4f4f4;

@@ -176,6 +176,8 @@
 		}
 
 		.description-right{
+			display: block;
+			min-height: 100%;
 			padding-left: 25px;
 
 			border-left: 1px solid $borderColor;
@@ -184,13 +186,16 @@
 				margin-bottom: 0px;
 			}
 
-			div {
+			.ask-a-question {
+				display: block;
 				margin-top: 60px;
+				padding: 5px 10px 5px 10px;
+
 				background-color: $color;
 				color:white;
-				padding: 5px 10px 5px 10px;
 				text-align: center;
 				font-weight: bold;
+				text-transform: uppercase;
 			}
 		}
 	}

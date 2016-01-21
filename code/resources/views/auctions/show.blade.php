@@ -72,10 +72,10 @@
 					<p>{{ $auction->artist }}</p>
 					<h6>Dimensions</h6>
 					<p>{{ (float)$auction->width }}cm x {{ (float)$auction->height }}cm {{ $auction->depth != 0.00 ? ' x '. (float)$auction->depth . 'cm' : '' }}</p>
-					<div>
-						<p>ASK A QUESTION</p>
-						<p>ABOUT THIS AUCTION</p>
-					</div>
+					<a class="ask-a-question" href="{{ route('getContact', $auction->slug) }}">
+						Ask a question <br>
+						about this auction
+					</a>
 				</div>
 			</div>
 

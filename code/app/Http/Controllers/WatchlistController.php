@@ -23,7 +23,7 @@ class WatchlistController extends Controller {
 
 		$watchlist_filter = 'all';
 
-		return view('watchlist', compact(
+		return view('watchlist.watchlist', compact(
 			'auctions',
 			'count_all_auctions',
 			'count_active_auctions',
@@ -43,7 +43,7 @@ class WatchlistController extends Controller {
 
 		$watchlist_filter = 'active';
 
-		return view('watchlist', compact(
+		return view('watchlist.watchlist', compact(
 			'auctions',
 			'count_all_auctions',
 			'count_active_auctions',
@@ -63,7 +63,7 @@ class WatchlistController extends Controller {
 
 		$watchlist_filter = 'ended';
 
-		return view('watchlist', compact(
+		return view('watchlist.watchlist', compact(
 			'auctions',
 			'count_all_auctions',
 			'count_active_auctions',

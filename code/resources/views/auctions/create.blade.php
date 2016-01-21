@@ -27,7 +27,7 @@
 
 		<div class="row">
 			<div class="col-md-6">
-				{!! Form::select('auction_style', $auction_styles->lists('name_' . App::getLocale(), 'id'), null, ['class' => 'form-group form-control select-auction-styles', 'id' => 'country']) !!}
+				{!! Form::select('auction_style', $auction_styles->lists('name_' . App::getLocale(), 'id'), null, ['class' => 'form-group form-control select-auction-style', 'id' => 'country']) !!}
 			</div>
 		</div>
 
@@ -274,7 +274,7 @@
 
 		<div class="row">
 			<div class="col-md-3 askquestion">
-				<a href="#">Ask a question <i class="fa fa-angle-right"></i></a>
+				<a href="{{ route('getContact') }}">Ask a question <i class="fa fa-angle-right"></i></a>
 			</div>
 		</div>
 
@@ -288,7 +288,7 @@
 	<script>
 
 		(function ($) {
-			$(".select-auction-styles").select2({
+			$(".select-auction-style").select2({
 				minimumResultsForSearch: Infinity
 			});
 

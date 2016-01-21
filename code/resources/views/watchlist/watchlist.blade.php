@@ -2,7 +2,7 @@
 
 @section('content')
 
-	@include('includes/header')
+	@include('includes.header')
 
 	@if($watchlist_filter == 'active')
 		{!! Breadcrumbs::render('watchlist.active')  !!}

@@ -65,6 +65,8 @@ Route::get('/', ['as' => 'home', 'uses' => 'PagesController@getHome']);
 Route::get('logout', ['as' => 'getLogout', 'uses' => 'AuthController@getLogout']);
 
 Route::get('/faq', ['as' => 'faq', 'uses' => 'PagesController@getFaq']);
+Route::get('/contact/{slug?}', ['as' => 'getContact', 'uses' => 'PagesController@getContact']);
+Route::post('/contact', ['as' => 'postContact', 'uses' => 'PagesController@postContact']);
 
 // Auction routes
 Route::get('art', ['as' => 'auctions.overview', 'uses' => 'AuctionsController@getOverview']);
