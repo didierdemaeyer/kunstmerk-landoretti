@@ -76,4 +76,11 @@ class Auction extends Model implements SluggableInterface {
 			->paginate($number);
 	}
 
+	public function getHighestBid()
+	{
+		return $this->hasMany('App\Bid')
+			->orderBy('bid', 'DESC')
+			->first();
+	}
+
 }

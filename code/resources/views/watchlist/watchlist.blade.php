@@ -17,7 +17,7 @@
 			{!! Form::open(['route' => 'watchlist.removeMultiple']) !!}
 				<div class="row">
 					<div class="col-md-12">
-						<h1>My watchlist</h1>
+						<h1>Watchlist</h1>
 					</div>
 				</div>
 				<div class="row">

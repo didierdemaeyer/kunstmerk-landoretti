@@ -1,16 +1,16 @@
 .details {
 
-	h3{
+	h3 {
 		color: black;
 	}
 
 	.top-details {
 
-		i{
+		i {
 			padding-left: 10px;
 			color: $accentBlue;
 		}
-		a{
+		a {
 			color: $accentBlue;
 		}
 	}
@@ -22,20 +22,19 @@
 		background-size: cover;
 	}
 
-	.small-images
-	{
+	.small-images {
 		margin-top: 10px;
 		padding-left: 0px;
 		padding-right: 0px;
 
-		.small-image{
-			width : 32%;
+		.small-image {
+			width: 32%;
 			float: left;
 			height: 110px;
 			background-position: center;
 			background-size: cover;
 
-			&:nth-child(2){
+			&:nth-child(2) {
 				margin-left: 2%;
 				margin-right: 2%;
 			}
@@ -52,14 +51,14 @@
 			margin-bottom: 0px;
 		}
 
-		.time-left{
+		.time-left {
 			margin-bottom: 0px;
-			
+
 			color: $accent;
 			font-size: 0.9em;
 		}
 
-		.text{
+		.text {
 			margin-bottom: 0px;
 		}
 
@@ -78,23 +77,21 @@
 			color: $black;
 			text-decoration: underline;
 			margin-bottom: 30px;
-			display:block;
+			display: block;
 			font-weight: bold;
 
-			&:hover{
+			&:hover {
 				text-decoration: none;
 			}
 		}
 
-
 		.bid-now {
 			border: 1px solid $borderColor;
-			padding-right : 15px;
+			padding-right: 15px;
 
 			h5, h3 {
 				color: $accentBlue;
 			}
-
 
 			.buy-now {
 				color: $accent;
@@ -111,97 +108,112 @@
 				color: white;
 				padding: 10px 15px 10px 0px;
 
-				i{
-					padding-left: 5px;
-				}
-
-				p{
-					margin-bottom: 0px;
-					font-weight: bold;
-				}
+			form {
+				margin-top: 0;
 
 				input {
-					width : 100px;
+					width: 120px;
+					height: 35px;
 					color: $black;
-					margin-right: 20px;
 				}
 			}
 
-			.watchlist-add,
-			.watchlist-remove {
-				padding: 10px 0px 0px 0px;
-				text-align: center;
-				margin-right: -15px;
-				
-				a{
-					color: $accentBlue;
-					text-decoration: underline;
+			button {
+				position: relative;
+				margin-top: -10px;
+				margin-right: 20px;
 
-					&:hover {
-						text-decoration: none;
-					}
-				}
+				border: none;
+				background-color: transparent;
+				font-size: 1.4rem;
+				font-weight: 700;
 
+				i {
+					position: absolute;
+					bottom: -4px;
+					right: -12px;
+					padding-top: 10px;
 
-				i{
-					padding-right: 10px;
-				}
-			}
-
-			.watchlist-remove {
-
-				a {
-					color: $errorColor;
+					font-size: 3rem;
+					line-height: 3rem;
 				}
 			}
 		}
-	}
-	.description-auction{
-		width: 100%;
-		border: 1px solid $borderColor;
-		margin: 45px 0px 45px 0px;
-		padding: 35px 5px 35px 5px;
-		display: inline-block;
 
+		.watchlist-add,
+		.watchlist-remove {
+			padding: 10px 0px 0px 0px;
+			text-align: center;
+			margin-right: -15px;
 
-		h6 {
-			font-weight: bold;
-			margin-bottom: 0px;
-			color: black;
-		}
+			a {
+				color: $accentBlue;
+				text-decoration: underline;
 
-
-		.description-left {
-			padding: 0px 45px 0px 15px;
-		}
-
-		.description-right{
-			display: block;
-			min-height: 100%;
-			padding-left: 25px;
-
-			border-left: 1px solid $borderColor;
-
-			p {
-				margin-bottom: 0px;
+				&:hover {
+					text-decoration: none;
+				}
 			}
 
-			.ask-a-question {
-				display: block;
-				margin-top: 60px;
-				padding: 5px 10px 5px 10px;
+			i {
+				padding-right: 10px;
+			}
+		}
 
-				background-color: $color;
-				color:white;
-				text-align: center;
-				font-weight: bold;
-				text-transform: uppercase;
+		.watchlist-remove {
+
+			a {
+				color: $errorColor;
 			}
 		}
 	}
 }
 
+.description-auction {
+	width: 100%;
+	border: 1px solid $borderColor;
+	margin: 45px 0px 45px 0px;
+	padding: 35px 5px 35px 5px;
+	display: inline-block;
+
+	h6 {
+		font-weight: bold;
+		margin-bottom: 0px;
+		color: black;
+	}
+
+	.description-left {
+		padding: 0px 45px 0px 15px;
+	}
+
+	.description-right {
+		display: block;
+		min-height: 100%;
+		padding-left: 25px;
+
+		border-left: 1px solid $borderColor;
+
+		p {
+			margin-bottom: 0px;
+		}
+
+		.ask-a-question {
+			display: block;
+			margin-top: 60px;
+			padding: 5px 10px 5px 10px;
+
+			background-color: $color;
+			color: white;
+			text-align: center;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+	}
+}
+
+}
+
 .section-related {
-	background-color:  $grey;
+	background-color: $grey;
 	padding-bottom: 50px;
 }

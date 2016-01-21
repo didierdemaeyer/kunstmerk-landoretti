@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bid extends Model
 {
-	
+
+	protected $fillable = ['auction_id', 'bid'];
 
 	/**
 	 * Relationships

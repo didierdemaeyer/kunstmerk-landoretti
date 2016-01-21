@@ -30,16 +30,12 @@ class AuctionsController extends Controller {
 	{
 		$user = Auth::user();
 
-		$pendingAuctions = $user->auctions;
-		$refusedAuctions = $user->auctions;
 		$activeAuctions = $user->getActiveAuctions();
 		$expiredAuctions = $user->getExpiredAuctions();
 		$soldAuctions = $user->getSoldAuctions();
 
 		return view('auctions.myauctions', compact(
 			'user',
-			'pendingAuctions',
-			'refusedAuctions',
 			'activeAuctions',
 			'expiredAuctions',
 			'soldAuctions'

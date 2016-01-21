@@ -13,13 +13,12 @@ class CreateBidsTable extends Migration
     public function up()
     {
         Schema::create('bids', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('auction_id')->unsigned();
             $table->decimal('bid', 15, 2);
             $table->softDeletes();
             $table->timestamps();
-
-            $table->primary(['user_id', 'auction_id']);
         });
     }
 

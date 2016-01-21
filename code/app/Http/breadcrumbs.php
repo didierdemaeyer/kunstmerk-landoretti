@@ -98,3 +98,9 @@ Breadcrumbs::register('watchlist.ended', function ($breadcrumbs)
 	$breadcrumbs->push('Ended', route('watchlist.ended'));
 });
 
+// Home > My Bids
+Breadcrumbs::register('mybids', function ($breadcrumbs)
+{
+	$breadcrumbs->parent('home');
+	$breadcrumbs->push('My Bids', route('mybids'));
+});

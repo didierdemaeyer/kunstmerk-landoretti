@@ -13,6 +13,17 @@
 	{!! Breadcrumbs::render('art.show', $auction) !!}
 
 	<div class="container">
+		{{--Display the validation errors --}}
+		@if (count($errors) > 0)
+			<div class="alert alert-danger">
+				<ul>
+					@foreach ($errors->all() as $error)
+						<li>{{ $error }}</li>
+					@endforeach
+				</ul>
+			</div>
+		@endif
+
 		<div class="details">
 			<div class="row">
 				<div class="col-md-10">
@@ -48,7 +59,14 @@
 						@endif
 						<p>bids: 7 </p>
 						<div class="bid-now-sub">
-							<p><input>BID NOW<i class="fa fa-angle-right"></i></p>
+							{!! Form::open(['route' => 'placeBid']) !!}
+
+								{!! Form::hidden('auction_id', $auction->id) !!}
+								{!! Form::text('bid') !!}
+								<button type="submit">BID NOW <i class="fa fa-angle-right"></i></button>
+
+							{!! Form::close() !!}
+							{{--<input>BID NOW<i class="fa fa-angle-right"></i>--}}
 						</div>
 						@if(Auth::user())
 							@if ($isInWatchlist)
@@ -72,10 +90,10 @@
 					<p>{{ $auction->artist }}</p>
 					<h6>Dimensions</h6>
 					<p>{{ (float)$auction->width }}cm x {{ (float)$auction->height }}cm {{ $auction->depth != 0.00 ? ' x '. (float)$auction->depth . 'cm' : '' }}</p>
-					<a class="ask-a-question" href="{{ route('getContact', $auction->slug) }}">
-						Ask a question <br>
-						about this auction
-					</a>
+						<a class="ask-a-question" href="{{ route('getContact', $auction->slug) }}">
+							Ask a question <br>
+							about this auction
+						</a>
 				</div>
 			</div>
 

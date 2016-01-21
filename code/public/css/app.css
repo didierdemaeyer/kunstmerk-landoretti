@@ -6936,15 +6936,27 @@ form {
       background-color: #01a6a0;
       color: white;
       padding: 10px 15px 10px 0px; }
-      .details .short-details .bid-now .bid-now-sub i {
-        padding-left: 5px; }
-      .details .short-details .bid-now .bid-now-sub p {
-        margin-bottom: 0px;
-        font-weight: bold; }
-      .details .short-details .bid-now .bid-now-sub input {
-        width: 100px;
-        color: #000000;
-        margin-right: 20px; }
+      .details .short-details .bid-now .bid-now-sub form {
+        margin-top: 0; }
+        .details .short-details .bid-now .bid-now-sub form input {
+          width: 120px;
+          height: 35px;
+          color: #000000; }
+      .details .short-details .bid-now .bid-now-sub button {
+        position: relative;
+        margin-top: -10px;
+        margin-right: 20px;
+        border: none;
+        background-color: transparent;
+        font-size: 1.4rem;
+        font-weight: 700; }
+        .details .short-details .bid-now .bid-now-sub button i {
+          position: absolute;
+          bottom: -4px;
+          right: -12px;
+          padding-top: 10px;
+          font-size: 3rem;
+          line-height: 3rem; }
     .details .short-details .bid-now .watchlist-add,
     .details .short-details .bid-now .watchlist-remove {
       padding: 10px 0px 0px 0px;
@@ -6996,39 +7008,48 @@ form {
   background-color: #f4f4f4;
   padding-bottom: 50px; }
 
-.my-auctions .table td:nth-child(n+2) {
+.my-auctions .table td:nth-child(n+2),
+.my-bids .table td:nth-child(n+2) {
   padding: 0px 25px 0px 25px;
   vertical-align: middle; }
 
-.my-auctions .table td:nth-child(n+3) {
+.my-auctions .table td:nth-child(n+3),
+.my-bids .table td:nth-child(n+3) {
   text-align: center; }
 
-.my-auctions .table th:nth-child(2) {
+.my-auctions .table th:nth-child(2),
+.my-bids .table th:nth-child(2) {
   padding-left: 25px; }
 
-.my-auctions .table th:nth-child(n+3) {
+.my-auctions .table th:nth-child(n+3),
+.my-bids .table th:nth-child(n+3) {
   text-align: center; }
 
-.my-auctions .img-preview {
+.my-auctions .img-preview,
+.my-bids .img-preview {
   padding: 0; }
-  .my-auctions .img-preview a {
+  .my-auctions .img-preview a,
+  .my-bids .img-preview a {
     display: block;
     width: 100%;
     height: 100%;
     background-position: center;
     background-size: cover; }
-    .my-auctions .img-preview a span {
+    .my-auctions .img-preview a span,
+    .my-bids .img-preview a span {
       display: block;
       width: 100%;
       height: 100%;
       text-align: center;
       opacity: 0;
       transition: all 0.3s ease; }
-      .my-auctions .img-preview a span i {
+      .my-auctions .img-preview a span i,
+      .my-bids .img-preview a span i {
         font-size: 6rem;
         line-height: 136px;
         color: #ffffff; }
-    .my-auctions .img-preview a:hover span {
+    .my-auctions .img-preview a:hover span,
+    .my-bids .img-preview a:hover span {
       opacity: 1;
       background-color: rgba(0, 0, 0, 0.4); }
 

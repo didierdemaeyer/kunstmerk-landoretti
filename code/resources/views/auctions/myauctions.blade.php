@@ -21,7 +21,7 @@
 		<div class="my-auctions">
 			<div class="row">
 				<div class="col-md-10">
-					<h1>My auctions</h1>
+					<h1>My Auctions</h1>
 				</div>
 			</div>
 			<div class="row">
