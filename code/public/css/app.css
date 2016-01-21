@@ -6329,18 +6329,26 @@ form {
   list-style: none;
   padding-left: 0; }
   #top-navbar .auth-links li {
+    position: relative;
+    height: 16px;
     float: left;
     padding: 0 30px;
+    margin-top: 5px;
     border-right: 1px solid #595959; }
     #top-navbar .auth-links li:first-child {
       padding-left: 0; }
     #top-navbar .auth-links li:last-child {
       border-right: none; }
   #top-navbar .auth-links a {
+    position: relative;
+    display: block;
+    margin-top: -2px;
     color: #0a1e75;
     font-size: 1.4rem;
     text-decoration: none;
     text-transform: uppercase; }
+    #top-navbar .auth-links a i {
+      margin-right: 4px; }
 
 #top-navbar .loginform {
   display: block;
@@ -6540,6 +6548,29 @@ form {
   border-bottom: none;
   overflow: visible; }
 
+.select2-container {
+  margin-bottom: 30px; }
+
+.select2-container--default .select2-selection--single {
+  height: 42px;
+  padding: 6px 15px;
+  background-color: #dbdbdb;
+  border: 1px solid #dbdbdb;
+  border-radius: 0; }
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+  padding-left: 0;
+  padding-right: 20px; }
+
+.select2-container .select-arrow {
+  position: absolute;
+  right: 20px;
+  top: 0;
+  height: 42px; }
+  .select2-container .select-arrow i {
+    line-height: 42px;
+    font-size: 3.5rem; }
+
 .panel-profile {
   border-color: #dbdbdb;
   border-radius: 0;
@@ -6696,6 +6727,16 @@ form {
 .carousel-inner {
   height: 100%; }
 
+.carousel-indicators li {
+  width: 15px;
+  height: 15px;
+  margin: 1px 7px;
+  background-color: rgba(255, 255, 255, 0.4); }
+  .carousel-indicators li.active {
+    width: 17px;
+    height: 17px;
+    margin: 1px 7px; }
+
 .fill {
   width: 100%;
   height: 100%;
@@ -6704,8 +6745,25 @@ form {
   /* background images in carousel are set in html */ }
 
 #myCarousel {
+  position: relative;
   width: 100%;
   left: 0; }
+  #myCarousel .carousel-control {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 70px;
+    background: rgba(0, 0, 0, 0.3);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-shadow: none; }
+    #myCarousel .carousel-control.left {
+      margin-left: -5px; }
+    #myCarousel .carousel-control.right {
+      margin-right: -5px; }
+    #myCarousel .carousel-control i {
+      font-size: 6rem;
+      line-height: 6.7rem; }
 
 .carousel-caption {
   right: 0;
@@ -6727,7 +6785,8 @@ form {
 * Info Block - How does it work?
 */
 .info-home h1, .info-home h3, .info-home p {
-  text-align: center; }
+  text-align: center;
+  font-weight: 400; }
 
 .info-home img {
   margin-left: auto;
@@ -6738,6 +6797,9 @@ form {
   color: #0a1e75;
   padding: 40px 0px;
   margin: 0px; }
+
+.info-home h3 {
+  margin-top: 30px; }
 
 .info-home p {
   padding: 0px 50px; }
@@ -6757,6 +6819,21 @@ form {
     color: #0a1e75;
     padding: 30px 0px;
     margin: 0 0 20px; }
+    .popular-home h1 span {
+      position: relative;
+      display: inline-block;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      border: 1px solid #0a1e75;
+      line-height: 4.5rem; }
+      .popular-home h1 span i {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        font-size: 3rem;
+        line-height: 2.5rem; }
   .popular-home .popular-image {
     float: right;
     display: block;

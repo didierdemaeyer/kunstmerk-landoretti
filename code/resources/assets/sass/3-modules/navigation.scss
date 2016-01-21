@@ -24,10 +24,13 @@
 		padding-left: 0;
 
 		li {
+			position: relative;
+			height: 16px;
 			float: left;
 			padding: 0 30px;
+			margin-top: 5px;
 			border-right: 1px solid $color;
-			
+
 			&:first-child {
 				padding-left: 0;
 			}
@@ -37,10 +40,17 @@
 		}
 
 		a {
+			position: relative;
+			display: block;
+			margin-top: -2px;
 			color: $accentBlue;
 			font-size: 1.4rem;
 			text-decoration: none;
 			text-transform: uppercase;
+
+			i {
+				margin-right: 4px;
+			}
 		}
 	}
 

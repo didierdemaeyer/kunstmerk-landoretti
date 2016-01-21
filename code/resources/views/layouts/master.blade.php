@@ -16,6 +16,7 @@
 	{{-- Styles --}}
 	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css" rel="stylesheet" />
 
 	@yield('links')
 
@@ -41,6 +42,7 @@
 	{{-- Scripts --}}
 	<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
   <script src="{{ asset('js/all.js') }}"></script>
 
   @yield('scripts')

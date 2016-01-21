@@ -12,6 +12,19 @@
 	height: 100%;
 }
 
+.carousel-indicators li {
+	width: 15px;
+	height: 15px;
+	margin: 1px 7px;
+	background-color: rgba(255,255,255, 0.4);
+
+	&.active {
+		width: 17px;
+		height: 17px;
+		margin: 1px 7px;
+	}
+}
+
 
 .fill {
 	width: 100%;
@@ -22,8 +35,32 @@
 }
 
 #myCarousel {
+	position: relative;
 	width: 100%;
 	left: 0;
+
+	.carousel-control {
+		position: absolute;
+		top: 50%;
+		width: 40px;
+		height: 70px;
+
+		background: rgba(0,0,0,0.3);
+		transform: translateY(-50%);
+		text-shadow: none;
+
+		&.left {
+			margin-left: -5px;
+		}
+		&.right {
+			margin-right: -5px;
+		}
+
+		i {
+			font-size: 6rem;
+			line-height: 6.7rem;
+		}
+	}
 }
 
 .carousel-caption {
@@ -54,6 +91,7 @@
 .info-home {
 	h1, h3, p {
 		text-align : center;
+		font-weight: 400;
 	}
 
 	img {
@@ -66,6 +104,10 @@
 		color: $accentBlue;
 		padding: 40px 0px;
 		margin : 0px;
+	}
+
+	h3 {
+		margin-top: 30px;
 	}
 
 	p {
@@ -91,6 +133,27 @@
 		color: $accentBlue;
 		padding: 30px 0px;
 		margin: 0 0 20px;
+
+		span {
+			position: relative;
+			display: inline-block;
+			width: 2.5rem;
+			height: 2.5rem;
+
+			border-radius: 50%;
+			border: 1px solid $accentBlue;
+
+			line-height: 4.5rem;
+
+			i {
+				position: absolute;
+				top: 0;
+				right: 0;
+				left: 0;
+				font-size: 3rem;
+				line-height: 2.5rem;
+			}
+		}
 	}
 
 	.popular-image {

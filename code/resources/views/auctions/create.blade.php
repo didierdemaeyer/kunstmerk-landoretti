@@ -27,7 +27,7 @@
 
 		<div class="row">
 			<div class="col-md-6">
-				{!! Form::select('auction_style', $auction_styles->lists('name_' . App::getLocale(), 'id'), null, ['class' => 'form-group form-control', 'id' => 'country']) !!}
+				{!! Form::select('auction_style', $auction_styles->lists('name_' . App::getLocale(), 'id'), null, ['class' => 'form-group form-control select-auction-styles', 'id' => 'country']) !!}
 			</div>
 		</div>
 
@@ -282,4 +282,19 @@
 
 	</div>
 
+@stop
+
+@section('scripts')
+	<script>
+
+		(function ($) {
+			$(".select-auction-styles").select2({
+				minimumResultsForSearch: Infinity
+			});
+
+			$('.select2-selection__arrow').replaceWith("<span class='select-arrow'><i class='fa fa-angle-down'></i></span>");
+
+		})(jQuery);
+
+	</script>
 @stop

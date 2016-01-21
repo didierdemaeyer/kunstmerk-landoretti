@@ -43,10 +43,10 @@
 
 		<!-- Controls -->
 		<a class="left carousel-control" href="#myCarousel" data-slide="prev">
-			<span class="icon-prev"></span>
+			<i class="fa fa-angle-left"></i>
 		</a>
 		<a class="right carousel-control" href="#myCarousel" data-slide="next">
-			<span class="icon-next"></span>
+			<i class="fa fa-angle-right"></i>
 		</a>
 
 	</header>
@@ -77,7 +77,7 @@
 <div class="section-popular">
 	<div class="container">
 		<div class="popular-home row">
-			<h1>Most popular this week</h1>
+			<h1>Most popular this week <span><i class="fa fa-angle-down"></i></span></h1>
 			<div class="col-md-12">
 				@foreach($auctions as $auction)
 					<a href="{{ route('auctions.show', $auction->slug) }}" class="popular-image" style="background-image:url({{ $auction->image_artwork }});"><span class="overlay"><i class="fa fa-search"></i></span></a>
@@ -88,3 +88,4 @@
 </div>
 
 @endsection
+
