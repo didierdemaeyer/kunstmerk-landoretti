@@ -55,20 +55,20 @@
 <div class="container">
 	<div class="row">
 		<div class="info-home col-md-12">
-			<h1>How does it work?</h1>
+			<h1>{{ trans('home.how-does-it-work') }}</h1>
 			<div class="col-md-4">
 				<img src="{{ asset('img/icon-pencil.png') }}" alt="an icon shaped as a pencil">
-				<h3>Sign up</h3>
+				<h3>{{ trans('home.sign-up') }}</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt debitis excepturi.</p>
 			</div>
 			<div class="col-md-4">
 				<img src="{{ asset('img/icon-check.png') }}" alt="an icon shaped as a check mark">
-				<h3>Make deals</h3>
+				<h3>{{ trans('home.make-deals') }}</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt debitis excepturi.</p>
 			</div>
 			<div class="col-md-4">
 				<img src="{{ asset('img/icon-smiley.png') }}" alt="an icon shaped as a smiley">
-				<h3>Everyone happy!</h3>
+				<h3>{{ trans('home.everyone-happy') }}</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt debitis excepturi.</p>
 			</div>
 		</div>
@@ -77,7 +77,7 @@
 <div class="section-popular">
 	<div class="container">
 		<div class="popular-home row">
-			<h1>Most popular this week <span><i class="fa fa-angle-down"></i></span></h1>
+			<h1>{{ trans('home.most-popular-this-week') }} <span><i class="fa fa-angle-down"></i></span></h1>
 			<div class="col-md-12">
 				@foreach($auctions as $auction)
 					<a href="{{ route('auctions.show', $auction->slug) }}" class="popular-image" style="background-image:url({{ $auction->image_artwork }});"><span class="overlay"><i class="fa fa-search"></i></span></a>

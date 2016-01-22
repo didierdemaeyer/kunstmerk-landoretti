@@ -28,7 +28,7 @@
 			<div class="row">
 				<div class="col-md-10">
 					<h1>{{ $auction->title }}</h1>
-					<p class="top-details">25d 14u 44m <a href="#">({{ count($auction->bids) == 1 ? '1 bid' : count($auction->bids) . ' bids' }} ) <i class="fa fa-bars"></i></a></p>
+					<p class="top-details">25d 14u 44m <a href="#">({{ count($auction->bids) == 1 ? '1 bid' : count($auction->bids) . ' bids' }}) <i class="fa fa-bars"></i></a></p>
 				</div>
 			</div>
 			<div class="row">

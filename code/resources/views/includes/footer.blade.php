@@ -2,9 +2,9 @@
 	<div class="row">
 		<div class="col-md-3">
 			<h4>HELP</h4>
-			<a href="#">Login</a>
-			<a href="{{ route('getRegister') }}">Register</a>
-			<a href="{{ route('password.getEmail') }}">Reset Password</a>
+			<a href="#">{{ trans('navigation.login') }}</a>
+			<a href="{{ route('getRegister') }}">{{ trans('navigation.register') }}</a>
+			<a href="{{ route('password.getEmail') }}">{{ trans('navigation.password.email') }}</a>
 			<br>
 			<h4>HELP</h4>
 			<a href="#">Terms of Service</a>
@@ -95,9 +95,9 @@
 
 			<ul class="nav-links">
 				<li><a href="{{ route('home') }}">Home</a></li>
-				<li><a href="{{ route('auctions.overview') }}">Art</a></li>
-				<li><a href="{{ route('auctions.myauctions') }}">MyAuctions</a></li>
-				<li><a href="{{ route('mybids') }}">MyBids</a></li>
+				<li><a href="{{ route('auctions.overview') }}">{{ trans('navigation.art') }}</a></li>
+				<li><a href="{{ route('auctions.myauctions') }}">{{ trans('navigation.myauctions') }}</a></li>
+				<li><a href="{{ route('mybids') }}">{{ trans('navigation.mybids') }}</a></li>
 				<li><a href="{{ route('faq') }}">FAQ</a></li>
 				<li><a href="{{ route('getContact') }}">Contact</a></li>
 			</ul>

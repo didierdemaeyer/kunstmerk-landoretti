@@ -29,7 +29,7 @@ Breadcrumbs::register('contact', function ($breadcrumbs)
 Breadcrumbs::register('art', function ($breadcrumbs)
 {
 	$breadcrumbs->parent('home');
-	$breadcrumbs->push('Art', route('auctions.overview'));
+	$breadcrumbs->push(trans('navigation.art'), route('auctions.overview'));
 });
 
 // Home > Art > [Auction title]
@@ -43,14 +43,14 @@ Breadcrumbs::register('art.show', function ($breadcrumbs, $auction)
 Breadcrumbs::register('password.email', function ($breadcrumbs)
 {
 	$breadcrumbs->parent('home');
-	$breadcrumbs->push('Send Password Reset Email', route('password.getEmail'));
+	$breadcrumbs->push(trans('navigation.password.email'), route('password.getEmail'));
 });
 
 // Home > Reset Passord
 Breadcrumbs::register('password.reset', function ($breadcrumbs)
 {
 	$breadcrumbs->parent('home');
-	$breadcrumbs->push('Reset Password', route('password.getReset'));
+	$breadcrumbs->push(trans('navigation.password.reset'), route('password.getReset'));
 });
 
 
@@ -62,7 +62,7 @@ Breadcrumbs::register('password.reset', function ($breadcrumbs)
 Breadcrumbs::register('register', function ($breadcrumbs)
 {
 	$breadcrumbs->parent('home');
-	$breadcrumbs->push('Register', route('getRegister'));
+	$breadcrumbs->push(trans('navigation.register'), route('getRegister'));
 });
 
 
@@ -74,14 +74,14 @@ Breadcrumbs::register('register', function ($breadcrumbs)
 Breadcrumbs::register('profile', function ($breadcrumbs)
 {
 	$breadcrumbs->parent('home');
-	$breadcrumbs->push('Profile', route('profile'));
+	$breadcrumbs->push(trans('navigation.profile'), route('profile'));
 });
 
 // Home > My Auctions
 Breadcrumbs::register('myauctions', function ($breadcrumbs)
 {
 	$breadcrumbs->parent('home');
-	$breadcrumbs->push('My Auctions', route('auctions.myauctions'));
+	$breadcrumbs->push(trans('navigation.myauctions'), route('auctions.myauctions'));
 });
 
 // Home > My Auctions > Create
@@ -95,7 +95,7 @@ Breadcrumbs::register('myauctions.create', function ($breadcrumbs)
 Breadcrumbs::register('watchlist', function ($breadcrumbs)
 {
 	$breadcrumbs->parent('home');
-	$breadcrumbs->push('Watchlist', route('watchlist'));
+	$breadcrumbs->push(trans('navigation.watchlist'), route('watchlist'));
 });
 
 // Home > Watchlist > Active
@@ -116,7 +116,7 @@ Breadcrumbs::register('watchlist.ended', function ($breadcrumbs)
 Breadcrumbs::register('mybids', function ($breadcrumbs)
 {
 	$breadcrumbs->parent('home');
-	$breadcrumbs->push('My Bids', route('mybids'));
+	$breadcrumbs->push(trans('navigation.mybids'), route('mybids'));
 });
 
 // Home > Art > [Auction title] > Thank You

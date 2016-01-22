@@ -3,14 +3,14 @@
 
 		@if ( Auth::check() )
 			<ul class="auth-links">
-				<li><a href="{{ route('watchlist') }}"><i class="fa fa-bars"></i> Watchlist</a></li>
-				<li><a href="{{ route('profile') }}"><i class="fa fa-user"></i> Profile</a></li>
-				<li><a href="{{ route('getLogout') }}">Logout</a></li>
+				<li><a href="{{ route('watchlist') }}"><i class="fa fa-bars"></i> {{ trans('navigation.watchlist') }}</a></li>
+				<li><a href="{{ route('profile') }}"><i class="fa fa-user"></i> {{ trans('navigation.profile') }}</a></li>
+				<li><a href="{{ route('getLogout') }}">{{ trans('navigation.logout') }}</a></li>
 			</ul>
 		@else
 			<ul class="auth-links">
-				<li><a href="{{ route('getRegister') }}">Register</a></li>
-				<li><a href="#" id="loginbtn">Login</a></li>
+				<li><a href="{{ route('getRegister') }}">{{ trans('navigation.register') }}</a></li>
+				<li><a href="#" id="loginbtn">{{ trans('navigation.login') }}</a></li>
 			</ul>
 		@endif
 
@@ -24,7 +24,7 @@
 
 		<div class="search">
 			<form action="">
-				<input type="text" name="search" placeholder="Search" class="search-input">
+				<input type="text" name="search" placeholder="{{ trans('navigation.search') }}" class="search-input">
 				<button type="submit"><i class="fa fa-search"></i></button>
 			</form>
 		</div>
@@ -39,10 +39,10 @@
 
 		<ul class="nav-links">
 			<li><a href="{{ route('home') }}">Home</a></li>
-			<li><a href="{{ route('auctions.overview') }}">Art</a></li>
+			<li><a href="{{ route('auctions.overview') }}">{{ trans('navigation.art') }}</a></li>
 			@if (Auth::check())
-				<li><a href="{{ route('auctions.myauctions') }}">MyAuctions</a></li>
-				<li><a href="{{ route('mybids') }}">MyBids</a></li>
+				<li><a href="{{ route('auctions.myauctions') }}">{{ trans('navigation.myauctions') }}</a></li>
+				<li><a href="{{ route('mybids') }}">{{ trans('navigation.mybids') }}</a></li>
 			@endif
 			<li><a href="{{ route('faq') }}">FAQ</a></li>
 			<li><a href="{{ route('getContact') }}">Contact</a></li>
