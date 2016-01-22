@@ -104,3 +104,10 @@ Breadcrumbs::register('mybids', function ($breadcrumbs)
 	$breadcrumbs->parent('home');
 	$breadcrumbs->push('My Bids', route('mybids'));
 });
+
+// Home > Art > [Auction title] > Thank You
+Breadcrumbs::register('art.thank-you', function ($breadcrumbs, $auction)
+{
+	$breadcrumbs->parent('art.show', $auction);
+	$breadcrumbs->push('Thank You', route('auctions.show', $auction->slug));
+});

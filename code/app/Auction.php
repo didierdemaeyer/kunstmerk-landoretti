@@ -72,6 +72,7 @@ class Auction extends Model implements SluggableInterface {
 	public static function getActiveAuctions($number)
 	{
 		return Auction::where('enddate', '>', Carbon::now())
+			->where('buyer_id', '=', 0)
 			->orderBy('enddate', 'ASC')
 			->paginate($number);
 	}

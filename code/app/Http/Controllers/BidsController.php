@@ -26,7 +26,7 @@ class BidsController extends Controller {
 
 		$highest_bid = $auction->getHighestBid();
 
-		if ($request->get('bid') <= $highest_bid->bid) {
+		if (isset($highest_bid) && $request->get('bid') <= $highest_bid->bid) {
 			return back()->withErrors(['Your bid must be higher than the current highest bid, which is &euro;' . $highest_bid->bid . '.'])->withInput();
 		}
 

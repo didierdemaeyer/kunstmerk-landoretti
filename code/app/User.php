@@ -81,6 +81,7 @@ class User extends Model implements AuthenticatableContract,
 	{
 		return $this->auctions()
 			->where('enddate', '>', Carbon::now())
+			->where('buyer_id', '=', 0)
 			->orderBy('enddate', 'ASC')
 			->get();
 	}
@@ -88,8 +89,8 @@ class User extends Model implements AuthenticatableContract,
 	public function getExpiredAuctions()
 	{
 		return $this->auctions()
-			->where('buyer_id', '=', 0)
 			->where('enddate', '<', Carbon::now())
+			->where('buyer_id', '=', 0)
 			->orderBy('enddate', 'ASC')
 			->get();
 	}

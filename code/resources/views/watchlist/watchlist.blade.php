@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('title', 'Watchlist')
+
 @section('content')
 
 	@include('includes.header')
@@ -76,7 +78,13 @@
 								</tbody>
 							</table>
 						@else
-							<p>You currently have no auctions in your watchlist.</p>
+							@if($watchlist_filter == 'active')
+								<p class="no-records">You have no active auctions in your watchlist.</p>
+							@elseif($watchlist_filter == 'ended')
+								<p class="no-records">You have no ended auctions in your watchlist.</p>
+							@else {{-- All --}}
+								<p class="no-records">You currently have no auctions in your watchlist.</p>
+							@endif
 						@endif
 					</div>
 				</div>

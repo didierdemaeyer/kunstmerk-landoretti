@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('title', 'FAQ')
+
 @section('content')
 
 	@include('includes.header')

@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Detail')
+@section('title', $auction->title . ' by ' . $auction->artist)
 
 @section('links')
 	<link href="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.css" type="text/css" rel="stylesheet" />
@@ -28,7 +28,7 @@
 			<div class="row">
 				<div class="col-md-10">
 					<h1>{{ $auction->title }}</h1>
-					<p class="top-details">25d 14u 44m <a href="#">(7 bids) <i class="fa fa-bars"></i></a></p>
+					<p class="top-details">25d 14u 44m <a href="#">({{ count($auction->bids) == 1 ? '1 bid' : count($auction->bids) . ' bids' }} ) <i class="fa fa-bars"></i></a></p>
 				</div>
 			</div>
 			<div class="row">
@@ -55,9 +55,9 @@
 						<h5>Estimated Price: </h5>
 						<h3>&euro; {{ (float)$auction->min_price }} - &euro; {{ (float)$auction->max_price }}</h3>
 						@if ($auction->buyout_price)
-							<a class="buy-now" href="#">Buy now for &euro; {{ (float)$auction->buyout_price }}</a>
+							<a class="buy-now" href="{{ route('auctions.buy-now', $auction->slug) }}">Buy now for &euro; {{ (float)$auction->buyout_price }}</a>
 						@endif
-						<p>bids: 7 </p>
+						<p>bids: {{ count($auction->bids) }}</p>
 						<div class="bid-now-sub">
 							{!! Form::open(['route' => 'placeBid']) !!}
 

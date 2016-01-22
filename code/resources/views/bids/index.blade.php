@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('title', 'My Bids')
+
 @section('content')
 
 	@include('includes/header')

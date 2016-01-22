@@ -1,5 +1,9 @@
 .my-watchlist {
 
+	form {
+		margin-top: 0;
+	}
+
 	.filter{
 		margin-left: 31px;
 
@@ -111,5 +115,9 @@
 				background-color: rgba($black, 0.4);
 			}
 		}
+	}
+
+	.no-records {
+		padding-top: 20px;
 	}
 }

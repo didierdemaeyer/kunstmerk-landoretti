@@ -7053,6 +7053,9 @@ form {
       opacity: 1;
       background-color: rgba(0, 0, 0, 0.4); }
 
+.my-watchlist form {
+  margin-top: 0; }
+
 .my-watchlist .filter {
   margin-left: 31px; }
   .my-watchlist .filter a.active {
@@ -7120,6 +7123,9 @@ form {
     .my-watchlist .img-preview a:hover span {
       opacity: 1;
       background-color: rgba(0, 0, 0, 0.4); }
+
+.my-watchlist .no-records {
+  padding-top: 20px; }
 
 .faqs .faq-overview {
   border: 1px solid #dbdbdb;

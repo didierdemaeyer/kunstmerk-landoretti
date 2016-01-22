@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Mail;
 
 class AuctionsController extends Controller {
 
@@ -123,5 +124,32 @@ class AuctionsController extends Controller {
 		}
 
 		return view('auctions.show', compact('auction', 'related_auctions', 'isInWatchlist'));
+	}
+
+	public function buyNow($slug)
+	{
+		$auction = Auction::findBySlugOrFail($slug);
+		$buyer = Auth::user();
+
+		if ($auction->buyer_id != 0) {
+			return back()->withErrors(['This auction has already been sold.']);
+		}
+
+		$auction->buyer_id = $buyer->id;
+		$auction->save();
+
+		// send mail to other bidders
+		$bids = $auction->bids;
+		foreach ($bids as $bid) {
+			if ($bid->user->id != $auction->buyer->id) {
+				$user = $bid->user;
+				Mail::send('emails.auction-bought', ['auction' => $auction, 'user' => $user], function ($m) use ($auction, $user) {
+					$m->from('noreply@landoretti.com', 'Landoretti');
+					$m->to($user->email)->subject($auction->title . ' has been sold.');
+				});
+			}
+		}
+
+		return view('auctions.thank-you', compact('auction'));
 	}
 }

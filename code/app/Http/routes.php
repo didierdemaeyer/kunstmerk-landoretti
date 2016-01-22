@@ -46,6 +46,8 @@ Route::group(['middleware' => 'auth'], function ()
 	Route::get('myauctions/create', ['as' => 'auctions.create', 'uses' => 'AuctionsController@create']);
 	Route::post('myauctions', ['as' => 'auctions.store', 'uses' => 'AuctionsController@store']);
 
+	Route::get('art/{slug}/buy-now', ['as' => 'auctions.buy-now', 'uses' => 'AuctionsController@buyNow']);
+
 	// Watchlist
 	Route::get('watchlist', ['as' => 'watchlist', 'uses' => 'WatchlistController@getWatchlist']);
 	Route::get('watchlist/active', ['as' => 'watchlist.active', 'uses' => 'WatchlistController@getActiveWatchlist']);
