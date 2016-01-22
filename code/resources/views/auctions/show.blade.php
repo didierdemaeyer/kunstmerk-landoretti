@@ -54,19 +54,22 @@
 					<div class="bid-now">
 						<h5>Estimated Price: </h5>
 						<h3>&euro; {{ (float)$auction->min_price }} - &euro; {{ (float)$auction->max_price }}</h3>
-						@if ($auction->buyout_price)
+						@if ($auction->buyout_price && Auth::check())
 							<a class="buy-now" href="{{ route('auctions.buy-now', $auction->slug) }}">Buy now for &euro; {{ (float)$auction->buyout_price }}</a>
 						@endif
 						<p>bids: {{ count($auction->bids) }}</p>
 						<div class="bid-now-sub">
-							{!! Form::open(['route' => 'placeBid']) !!}
+							@if(Auth::check())
+								{!! Form::open(['route' => 'placeBid']) !!}
 
 								{!! Form::hidden('auction_id', $auction->id) !!}
 								{!! Form::text('bid') !!}
 								<button type="submit">BID NOW <i class="fa fa-angle-right"></i></button>
 
-							{!! Form::close() !!}
-							{{--<input>BID NOW<i class="fa fa-angle-right"></i>--}}
+								{!! Form::close() !!}
+							@else
+								<p>Please log in to place a bid.</p>
+							@endif
 						</div>
 						@if(Auth::user())
 							@if ($isInWatchlist)

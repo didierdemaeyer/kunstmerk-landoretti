@@ -108,37 +108,44 @@
 				color: white;
 				padding: 10px 15px 10px 0px;
 
-			form {
-				margin-top: 0;
+				p {
+					text-align: left;
+					margin-top: 10px;
+					margin-left: 15px;
+					margin-bottom: 10px;
+				}
 
-				input {
-					width: 120px;
-					height: 35px;
-					color: $black;
+				form {
+					margin-top: 0;
+
+					input {
+						width: 120px;
+						height: 35px;
+						color: $black;
+					}
+				}
+
+				button {
+					position: relative;
+					margin-top: -10px;
+					margin-right: 20px;
+
+					border: none;
+					background-color: transparent;
+					font-size: 1.4rem;
+					font-weight: 700;
+
+					i {
+						position: absolute;
+						bottom: -4px;
+						right: -12px;
+						padding-top: 10px;
+
+						font-size: 3rem;
+						line-height: 3rem;
+					}
 				}
 			}
-
-			button {
-				position: relative;
-				margin-top: -10px;
-				margin-right: 20px;
-
-				border: none;
-				background-color: transparent;
-				font-size: 1.4rem;
-				font-weight: 700;
-
-				i {
-					position: absolute;
-					bottom: -4px;
-					right: -12px;
-					padding-top: 10px;
-
-					font-size: 3rem;
-					line-height: 3rem;
-				}
-			}
-		}
 
 		.watchlist-add,
 		.watchlist-remove {

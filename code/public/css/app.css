@@ -6937,6 +6937,11 @@ form {
       background-color: #01a6a0;
       color: white;
       padding: 10px 15px 10px 0px; }
+      .details .short-details .bid-now .bid-now-sub p {
+        text-align: left;
+        margin-top: 10px;
+        margin-left: 15px;
+        margin-bottom: 10px; }
       .details .short-details .bid-now .bid-now-sub form {
         margin-top: 0; }
         .details .short-details .bid-now .bid-now-sub form input {
