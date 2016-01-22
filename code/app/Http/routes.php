@@ -24,12 +24,12 @@ Route::group(['middleware' => 'guest'], function ()
 	Route::post('login', ['as' => 'postLogin', 'uses' => 'AuthController@postLogin']);
 
 	// Password reset link request routes...
-	Route::get('password/email', 'Auth\PasswordController@getEmail');
-	Route::post('password/email', 'Auth\PasswordController@postEmail');
+	Route::get('password/email', ['as' => 'password.getEmail', 'uses' => 'Auth\PasswordController@getEmail']);
+	Route::post('password/email', ['as' => 'password.postEmail', 'uses' => 'Auth\PasswordController@postEmail']);
 
 	// Password reset routes...
-	Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
-	Route::post('password/reset', 'Auth\PasswordController@postReset');
+	Route::get('password/reset/{token}', ['as' => 'password.getReset', 'uses' => 'Auth\PasswordController@getReset']);
+	Route::post('password/reset', ['as' => 'password.postReset', 'uses' => 'Auth\PasswordController@postReset']);
 });
 
 

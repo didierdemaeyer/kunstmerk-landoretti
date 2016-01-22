@@ -6722,7 +6722,8 @@ form {
 .carousel,
 .item,
 .item.active {
-  height: 700px; }
+  height: 700px;
+  overflow: hidden; }
 
 .carousel-inner {
   height: 100%; }
@@ -6831,7 +6832,7 @@ form {
         position: absolute;
         top: 0;
         right: 0;
-        left: 0;
+        left: -1px;
         font-size: 3rem;
         line-height: 2.5rem; }
   .popular-home .popular-image {

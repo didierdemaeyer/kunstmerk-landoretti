@@ -4,6 +4,7 @@
 			<h4>HELP</h4>
 			<a href="#">Login</a>
 			<a href="{{ route('getRegister') }}">Register</a>
+			<a href="{{ route('password.getEmail') }}">Reset Password</a>
 			<br>
 			<h4>HELP</h4>
 			<a href="#">Terms of Service</a>

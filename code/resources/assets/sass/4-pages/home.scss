@@ -6,6 +6,7 @@
 .item,
 .item.active {
 	height: 700px;
+	overflow: hidden;
 }
 
 .carousel-inner {
@@ -149,7 +150,7 @@
 				position: absolute;
 				top: 0;
 				right: 0;
-				left: 0;
+				left: -1px;
 				font-size: 3rem;
 				line-height: 2.5rem;
 			}

@@ -39,6 +39,20 @@ Breadcrumbs::register('art.show', function ($breadcrumbs, $auction)
 	$breadcrumbs->push($auction->title, route('auctions.show', $auction->slug));
 });
 
+// Home > Send Password Reset Email
+Breadcrumbs::register('password.email', function ($breadcrumbs)
+{
+	$breadcrumbs->parent('home');
+	$breadcrumbs->push('Send Password Reset Email', route('password.getEmail'));
+});
+
+// Home > Reset Passord
+Breadcrumbs::register('password.reset', function ($breadcrumbs)
+{
+	$breadcrumbs->parent('home');
+	$breadcrumbs->push('Reset Password', route('password.getReset'));
+});
+
 
 /**
  * Breadcrumbs for routes only accessible when not logged in
