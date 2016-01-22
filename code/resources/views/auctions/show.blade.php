@@ -35,10 +35,10 @@
 				<div class="col-md-8">
 					<div class="col-md-12 big-image" href="{{ $auction->image_artwork }}" data-featherlight="image" style="background-image:url({{ $auction->image_artwork }});"></div>
 					<div class="col-md-12 small-images">
-						<div class="small-image" data-image="{{ $auction->image_artwork }}" style="background-image:url({{ $auction->image_artwork }});"></div>
-						<div class="small-image" data-image="{{ $auction->image_signature }}" style="background-image:url({{ $auction->image_signature }});"></div>
+						<div class="small-image" data-image="{{ $auction->image_artwork }}" style="background-image:url({{ $auction->image_artwork }});"><div class="overlay"></div></div>
+						<div class="small-image" data-image="{{ $auction->image_signature }}" style="background-image:url({{ $auction->image_signature }});"><div class="overlay"></div></div>
 						@if ($auction->image_optional)
-							<div class="small-image" data-image="{{ $auction->image_optional }}" style="background-image:url({{ $auction->image_optional }});"></div>
+							<div class="small-image" data-image="{{ $auction->image_optional }}" style="background-image:url({{ $auction->image_optional }});"><div class="overlay"></div></div>
 						@endif
 					</div>
 				</div>

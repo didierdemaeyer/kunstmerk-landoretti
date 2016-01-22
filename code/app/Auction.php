@@ -6,14 +6,33 @@ use Carbon\Carbon;
 use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
 use Illuminate\Database\Eloquent\Model;
+use Nicolaslopezj\Searchable\SearchableTrait;
 
 class Auction extends Model implements SluggableInterface {
 
+	use SearchableTrait;
 	use SluggableTrait;
 
 	protected $sluggable = [
 		'build_from' => 'title',
 		'save_to'    => 'slug',
+	];
+
+	protected $searchable = [
+		'columns' => [
+			'title'          => 10,
+			'artist'         => 10,
+			'year'           => 8,
+			'description_en' => 4,
+			'description_nl' => 4,
+			'condition_en'   => 4,
+			'condition_nl'   => 4,
+			'origin_en'      => 4,
+			'origin_nl'      => 4,
+			'min_price'      => 8,
+			'max_price'      => 8,
+			'buyout_price'   => 8,
+		],
 	];
 
 	protected $dates = ['enddate'];
@@ -37,7 +56,7 @@ class Auction extends Model implements SluggableInterface {
 		'min_price',
 		'max_price',
 		'buyout_price',
-		'enddate'
+		'enddate',
 	];
 
 	/**

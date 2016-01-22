@@ -78,3 +78,6 @@ Route::post('/contact', ['as' => 'postContact', 'uses' => 'PagesController@postC
 Route::get('art', ['as' => 'auctions.overview', 'uses' => 'AuctionsController@getOverview']);
 Route::get('art/{slug}', ['as' => 'auctions.show', 'uses' => 'AuctionsController@show']);
 
+// Search
+Route::get('search-results', ['as' => 'search', 'uses' => 'SearchController@search']);
+

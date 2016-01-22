@@ -12,7 +12,8 @@ return [
 	'watchlist' => 'Watchlist',
 	'profile'   => 'Profile',
 
-	'search' => 'Search',
+	'search'        => 'Search',
+	'searchresults' => 'Search Results',
 
 	'password.email' => 'Send Password Reset Email',
 	'password.reset' => 'Reset Password',

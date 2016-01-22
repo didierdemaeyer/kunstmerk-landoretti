@@ -6882,18 +6882,31 @@ form {
   width: 100%;
   height: 350px;
   background-position: center;
-  background-size: cover; }
+  background-size: cover;
+  cursor: pointer; }
 
 .details .small-images {
   margin-top: 10px;
   padding-left: 0px;
   padding-right: 0px; }
   .details .small-images .small-image {
+    position: relative;
     width: 32%;
     float: left;
     height: 110px;
     background-position: center;
-    background-size: cover; }
+    background-size: cover;
+    cursor: pointer; }
+    .details .small-images .small-image .overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: transparent;
+      transition: all 0.3s ease; }
+    .details .small-images .small-image:hover .overlay {
+      background-color: rgba(0, 0, 0, 0.3); }
     .details .small-images .small-image:nth-child(2) {
       margin-left: 2%;
       margin-right: 2%; }

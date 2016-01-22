@@ -23,10 +23,10 @@
 		</div>
 
 		<div class="search">
-			<form action="">
+			{!! Form::open(['route' => 'search', 'method' => 'get']) !!}
 				<input type="text" name="search" placeholder="{{ trans('navigation.search') }}" class="search-input">
 				<button type="submit"><i class="fa fa-search"></i></button>
-			</form>
+			{!! Form::close() !!}
 		</div>
 
 	</div>

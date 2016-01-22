@@ -53,6 +53,12 @@ Breadcrumbs::register('password.reset', function ($breadcrumbs)
 	$breadcrumbs->push(trans('navigation.password.reset'), route('password.getReset'));
 });
 
+// Search Results
+Breadcrumbs::register('searchresults', function ($breadcrumbs)
+{
+	$breadcrumbs->parent('home');
+	$breadcrumbs->push(trans('navigation.searchresults'), route('search'));
+});
 
 /**
  * Breadcrumbs for routes only accessible when not logged in

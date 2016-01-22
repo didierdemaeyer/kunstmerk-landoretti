@@ -12,7 +12,8 @@ return [
 	'watchlist' => 'Volglijst',
 	'profile'   => 'Profiel',
 
-	'search' => 'Zoeken',
+	'search'        => 'Zoeken',
+	'searchresults' => 'Zoekresultaten',
 
 	'password.email' => 'Stuur Wachtwoord Reset Mail',
 	'password.reset' => 'Reset Wachtwoord',
