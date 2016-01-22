@@ -9,6 +9,8 @@ class Faq extends Model {
 
 	use SearchableTrait;
 
+	protected $table = 'faqs';
+
 	protected $searchable = [
 		'columns' => [
 			'question_en' => 10,
@@ -17,7 +19,6 @@ class Faq extends Model {
 			'answer_nl' => 10,
 		],
 	];
-
 	protected $fillable = ['question_en', 'question_nl', 'answer_en', 'answer_nl'];
 
 	/**

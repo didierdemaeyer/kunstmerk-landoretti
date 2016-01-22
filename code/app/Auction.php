@@ -13,6 +13,8 @@ class Auction extends Model implements SluggableInterface {
 	use SearchableTrait;
 	use SluggableTrait;
 
+	protected $table = 'auctions';
+
 	protected $sluggable = [
 		'build_from' => 'title',
 		'save_to'    => 'slug',
@@ -23,15 +25,6 @@ class Auction extends Model implements SluggableInterface {
 			'title'          => 10,
 			'artist'         => 10,
 			'year'           => 8,
-			'description_en' => 4,
-			'description_nl' => 4,
-			'condition_en'   => 4,
-			'condition_nl'   => 4,
-			'origin_en'      => 4,
-			'origin_nl'      => 4,
-			'min_price'      => 8,
-			'max_price'      => 8,
-			'buyout_price'   => 8,
 		],
 	];
 

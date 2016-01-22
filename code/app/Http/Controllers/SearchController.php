@@ -16,12 +16,10 @@ class SearchController extends Controller {
 	{
 		$searchquery = $request->get('search');
 
-		$search_auctions = Auction::where('buyer_id', '=', 0)
-			->where('enddate', '>', Carbon::now())
-			->search($searchquery)
+		$search_auctions = Auction::search($searchquery)
 			->paginate(3, ['*'], 'auctions');
 
-		$search_faqs = Faq::search($searchquery)->paginate(3, ['*'], 'faqs');
+		$search_faqs = Faq::search($searchquery, null, null)->paginate(3, ['*'], 'faqs');
 
 		return view('pages.search', compact('searchquery', 'search_auctions', 'search_faqs'));
 	}

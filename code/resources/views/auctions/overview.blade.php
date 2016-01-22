@@ -99,14 +99,14 @@
 			<div class="col-md-12">
 
 				<div class="big-preview">
-					<a href="#" class="big-image" style="background-image:url('http://lorempixel.com/400/800/');">
+					<div class="big-image" style="background-image: url('/img/overview-dude.jpg')">
 						<span class="overlay">
 							<span class="overlay-content">
 								<h2>&ldquo;Lorem ipsum dolor&rdquo;</h2>
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut distinctio labore placeat quaerat. Accusamus adipisci alias aliquam assumenda deserunt dolore dolorum illum neque nesciunt qui, quibusdam rem sequi sint. Nesciunt?</p>
 							</span>
 						</span>
-					</a>
+					</div>
 				</div>
 
 				<div class="small-previews">
